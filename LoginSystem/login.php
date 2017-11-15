@@ -21,7 +21,7 @@ if (isset($_POST['username'])){
 
     //Checking is user existing in the database or not
     //select * from wUser, wAuthentication where wUser.wAuthentication_ID = wAuthentication.wAuthentication_ID
-    $query = "SELECT * FROM wUser, wAuthentication WHERE wUser.wAuthentication_ID = wAuthentication.wAuthentication_ID AND wUser_Username='$username' AND wAuthentication_PW='".md5($password)."'";
+    $query = "SELECT * FROM wUser, wAuthentication WHERE wUser.wAuthentication_ID = wAuthentication.wAuthentication_ID AND wUser_Username='$username' AND wAuthentication_PW='$password'";
     $result = mysqli_query($connection,$query) or die(mysql_error());
     $rows = mysqli_num_rows($result);
 
