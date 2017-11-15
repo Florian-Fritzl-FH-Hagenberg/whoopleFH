@@ -75,8 +75,8 @@ input[type="password"] {
 
 input[type="text"]:focus,
 input[type="password"]:focus {
-  border-bottom: 2px solid #16a085;
-  color: #16a085;
+  border-bottom: 2px solid #42A5F5;
+  color: #42A5F5;
   transition: 0.2s ease;
 }
 
@@ -84,7 +84,7 @@ input[type="submit"] {
   margin-top: 28px;
   width: 120px;
   height: 32px;
-  background: #16a085;
+  background: #42A5F5;
   border: none;
   border-radius: 2px;
   color: #FFF;
@@ -208,12 +208,16 @@ a img{
   width: auto;
 }
 
+.mdl-layout__header-row .mdl-navigation__link{
+  color: black;
+}
+
 .android-fab {
   position: absolute;
   right: 20%;
   bottom: -26px;
   z-index: 3;
-  background: #64ffda !important;
+  background: #42A5F5 !important;
   color: black !important;
 }
 
@@ -458,7 +462,7 @@ a img{
 
 .android-link {
   text-decoration: none;
-  color: #8bc34a !important;
+  color: #42A5F5 !important;
 }
 
   .android-link:hover {
@@ -473,7 +477,7 @@ a img{
 
 .android-alt-link {
   text-decoration: none;
-  color: #64ffda !important;
+  color: #42A5F5 !important;
   font-size: 16px;
 }
 
