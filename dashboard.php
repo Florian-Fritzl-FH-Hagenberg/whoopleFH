@@ -1,3 +1,10 @@
+<?php
+//include auth.php file on all secure pages
+include("authentication.php");
+//require database for user information
+require ("database.php");
+?>
+
 <!doctype html>
 <!--
   Material Design Lite
@@ -67,7 +74,7 @@
         <div class="mdl-layout__header-row">
             <span class="mdl-layout-title">whoople</span>
             <div class="mdl-layout-spacer"></div>
-            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="dashboard.html">Sign out</a>
+            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="logout.php">Sign out</a>
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
                 <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
                     <i class="material-icons">search</i>
@@ -105,7 +112,7 @@
             </div>
         </header>
         <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
-            <a class="mdl-navigation__link" href="index.html"><i class="mdl-color-text--blue-grey-400 material-icons"
+            <a class="mdl-navigation__link" href="index.php"><i class="mdl-color-text--blue-grey-400 material-icons"
                                                        role="presentation">home</i>Home</a>
             <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons"
                                                        role="presentation">inbox</i>Inbox</a>
@@ -152,6 +159,9 @@
             -->
             <!-- Three Line List with secondary info and action -->
 
+            <div class="form">
+                <p>Welcome <?php echo $_SESSION['username']; ?>!</p>
+            </div>
             <div class="mdl-cell mdl-cell--8-col">
                 <a>Already added Social Websites</a>
             </div>
