@@ -2,7 +2,7 @@
 //include auth.php file on all secure pages
 include("authentication.php");
 //require database for user information
-require ("database.php");
+require("database.php");
 ?>
 
 <!doctype html>
@@ -113,7 +113,7 @@ require ("database.php");
         </header>
         <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
             <a class="mdl-navigation__link" href="index.php"><i class="mdl-color-text--blue-grey-400 material-icons"
-                                                       role="presentation">home</i>Home</a>
+                                                                role="presentation">home</i>Home</a>
             <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons"
                                                        role="presentation">inbox</i>Inbox</a>
             <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons"
@@ -159,73 +159,91 @@ require ("database.php");
             -->
             <!-- Three Line List with secondary info and action -->
 
-            <div class="form">
-                <p>Welcome <?php echo $_SESSION['username']; ?>!</p>
+            <div class="mdl-cell mdl-cell--8-col">
+                <p>Login Successful. Welcome <?php echo $_SESSION['username']; ?>!</p>
             </div>
             <div class="mdl-cell mdl-cell--8-col">
                 <a>Already added Social Websites</a>
             </div>
 
-            <ul class="demo-list-control mdl-list">
-                <li class="mdl-list__item">
-                    <span class="mdl-list__item-primary-content">
-                        <i class="material-icons  mdl-list__item-avatar">person</i>
-                            Facebook
-                    </span>
-                    <span class="mdl-list__item-secondary-action">
-                        <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">add_circle_outline</i></a>
-                    </span>
-                </li>
-                <li class="mdl-list__item">
-                    <span class="mdl-list__item-primary-content">
-                        <i class="material-icons  mdl-list__item-avatar">person</i>
-                            Twitter
-                    </span>
-                    <span class="mdl-list__item-secondary-action">
-                        <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">add_circle_outline</i></a>
-                    </span>
-                </li>
-                <li class="mdl-list__item">
-                    <span class="mdl-list__item-primary-content">
-                        <i class="material-icons  mdl-list__item-avatar">person</i>
-                            Instagram
-                    </span>
-                    <span class="mdl-list__item-secondary-action">
-                        <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">add_circle_outline</i></a>
-                    </span>
-                </li>
-                </li>
-                <li class="mdl-list__item">
-                    <span class="mdl-list__item-primary-content">
-                        <i class="material-icons  mdl-list__item-avatar">person</i>
-                            Google+
-                    </span>
-                    <span class="mdl-list__item-secondary-action">
-                        <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">add_circle_outline</i></a>
-                    </span>
-                </li>
-                </li>
-                <li class="mdl-list__item">
-                    <span class="mdl-list__item-primary-content">
-                        <i class="material-icons  mdl-list__item-avatar">person</i>
-                            Skype
-                    </span>
-                    <span class="mdl-list__item-secondary-action">
-                        <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">add_circle_outline</i></a>
-                    </span>
-                </li>
-                </li>
-                <li class="mdl-list__item">
-                    <span class="mdl-list__item-primary-content">
-                        <i class="material-icons  mdl-list__item-avatar">person</i>
-                            WhatsApp
-                    </span>
-                    <span class="mdl-list__item-secondary-action">
-                        <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">add_circle_outline</i></a>
-                    </span>
-                </li>
+            <!--?php
+            $sql = "SELECT wWhoople_Website FROM wwhoople WHERE";
+            $result = $conn->query($sql);
+            $conn->close();
+            ?> -->
 
+
+            <ul class="demo-list-control mdl-list">
+                <?php foreach ($whooples as $whoople): ?>
+                    <li class="mdl-list__item">
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons  mdl-list__item-avatar">person</i>
+                            <?= $whoople ?>
+                        </span>
+                    </li>
+                <?php endforeach; ?>
             </ul>
+
+            <!-- <li class="mdl-list__item">
+                 <span class="mdl-list__item-primary-content">
+                     <i class="material-icons  mdl-list__item-avatar">person</i>
+                         Facebook
+                 </span>
+                 <span class="mdl-list__item-secondary-action">
+                     <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">add_circle_outline</i></a>
+                 </span>
+             </li>
+             <li class="mdl-list__item">
+                 <span class="mdl-list__item-primary-content">
+                     <i class="material-icons  mdl-list__item-avatar">person</i>
+                         Twitter
+                 </span>
+                 <span class="mdl-list__item-secondary-action">
+                     <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">add_circle_outline</i></a>
+                 </span>
+             </li>
+             <li class="mdl-list__item">
+                 <span class="mdl-list__item-primary-content">
+                     <i class="material-icons  mdl-list__item-avatar">person</i>
+                         Instagram
+                 </span>
+                 <span class="mdl-list__item-secondary-action">
+                     <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">add_circle_outline</i></a>
+                 </span>
+             </li>
+             </li>
+             <li class="mdl-list__item">
+                 <span class="mdl-list__item-primary-content">
+                     <i class="material-icons  mdl-list__item-avatar">person</i>
+                         Google+
+                 </span>
+                 <span class="mdl-list__item-secondary-action">
+                     <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">add_circle_outline</i></a>
+                 </span>
+             </li>
+             </li>
+             <li class="mdl-list__item">
+                 <span class="mdl-list__item-primary-content">
+                     <i class="material-icons  mdl-list__item-avatar">person</i>
+                         Skype
+                 </span>
+                 <span class="mdl-list__item-secondary-action">
+                     <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">add_circle_outline</i></a>
+                 </span>
+             </li>
+             </li>
+             <li class="mdl-list__item">
+                 <span class="mdl-list__item-primary-content">
+                     <i class="material-icons  mdl-list__item-avatar">person</i>
+                         WhatsApp
+                 </span>
+                 <span class="mdl-list__item-secondary-action">
+                     <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">add_circle_outline</i></a>
+                 </span>
+             </li>
+             </ul>
+             -->
+
 
             <div class="mdl-cell mdl-cell--8-col">
                 <a>Avalible Social Websites</a>
@@ -238,7 +256,8 @@ require ("database.php");
                             Facebook
                     </span>
                     <span class="mdl-list__item-secondary-action">
-                        <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">add_circle_outline</i></a>
+                        <a class="mdl-list__item-secondary-action" href="#"><i
+                                class="material-icons">add_circle_outline</i></a>
                     </span>
                 </li>
                 <li class="mdl-list__item">
@@ -247,7 +266,8 @@ require ("database.php");
                             Twitter
                     </span>
                     <span class="mdl-list__item-secondary-action">
-                        <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">add_circle_outline</i></a>
+                        <a class="mdl-list__item-secondary-action" href="#"><i
+                                class="material-icons">add_circle_outline</i></a>
                     </span>
                 </li>
                 <li class="mdl-list__item">
@@ -256,7 +276,8 @@ require ("database.php");
                             Instagram
                     </span>
                     <span class="mdl-list__item-secondary-action">
-                        <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">add_circle_outline</i></a>
+                        <a class="mdl-list__item-secondary-action" href="#"><i
+                                class="material-icons">add_circle_outline</i></a>
                     </span>
                 </li>
                 </li>
@@ -266,7 +287,8 @@ require ("database.php");
                             Google+
                     </span>
                     <span class="mdl-list__item-secondary-action">
-                        <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">add_circle_outline</i></a>
+                        <a class="mdl-list__item-secondary-action" href="#"><i
+                                class="material-icons">add_circle_outline</i></a>
                     </span>
                 </li>
                 </li>
@@ -276,7 +298,8 @@ require ("database.php");
                             Skype
                     </span>
                     <span class="mdl-list__item-secondary-action">
-                        <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">add_circle_outline</i></a>
+                        <a class="mdl-list__item-secondary-action" href="#"><i
+                                class="material-icons">add_circle_outline</i></a>
                     </span>
                 </li>
                 </li>
@@ -286,7 +309,8 @@ require ("database.php");
                             WhatsApp
                     </span>
                     <span class="mdl-list__item-secondary-action">
-                        <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">add_circle_outline</i></a>
+                        <a class="mdl-list__item-secondary-action" href="#"><i
+                                class="material-icons">add_circle_outline</i></a>
                     </span>
                 </li>
 
@@ -301,7 +325,8 @@ require ("database.php");
                 </svg>
             </div>
             <div class="demo-cards mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing">
-                <div class="demo-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop">
+                <div
+                    class="demo-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop">
                     <div class="mdl-card__title mdl-card--expand mdl-color--teal-300">
                         <h2 class="mdl-card__title-text">Updates</h2>
                     </div>
@@ -313,7 +338,8 @@ require ("database.php");
                     </div>
                 </div>
                 <div class="demo-separator mdl-cell--1-col"></div>
-                <div class="demo-options mdl-card mdl-color--deep-purple-500 mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--12-col-desktop">
+                <div
+                    class="demo-options mdl-card mdl-color--deep-purple-500 mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--12-col-desktop">
                     <div class="mdl-card__supporting-text mdl-color-text--blue-grey-50">
                         <h3>View options</h3>
                         <ul>
