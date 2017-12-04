@@ -76,7 +76,7 @@ require("database.php");
             <div class="mdl-layout-spacer"></div>
             <a class="mdl-navigation__link mdl-typography--text-uppercase" href="logout.php">Sign out</a>
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-                <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+                <label class="mdl-button mdl-js-button mdl-button--icon" for="search" id="searchButton">
                     <i class="material-icons">search</i>
                 </label>
                 <div class="mdl-textfield__expandable-holder">
@@ -166,22 +166,32 @@ require("database.php");
                 <a>Already added Social Websites</a>
             </div>
 
-            <!--?php
-            $sql = "SELECT wWhoople_Website FROM wwhoople WHERE";
-            $result = $conn->query($sql);
-            $conn->close();
-            ?> -->
+            <?php
+            $query = "SELECT wwhoople.wWhoople_Website, wwhoople.wWhoople_AccountName FROM `wwhoople`, wuser where wuser.wUser_ID = wwhoople.wUser_ID and wusername = '$_SESSION[username]';";
+            $result = mysqli_query($connection, $query);
+            $connection->close();
+            ?>
 
+            <?php debug_to_console($result[1][0]);?>
 
+            <?php function debug_to_console( $data ) {
+                $output = $data;
+                if ( is_array( $output ) )
+                    $output = implode( ',', $output);
+
+                echo "<script>console.log( 'Debug Objects: " . $output . "' );</script>";
+            };?>
+
+<!--
             <ul class="demo-list-control mdl-list">
-                <?php foreach ($whooples as $whoople): ?>
+                <!--?php foreach ($result as $whoople): ?>
                     <li class="mdl-list__item">
                         <span class="mdl-list__item-primary-content">
                             <i class="material-icons  mdl-list__item-avatar">person</i>
-                            <?= $whoople ?>
+                            <!--?= $whoople ?>
                         </span>
                     </li>
-                <?php endforeach; ?>
+                <!--?php endforeach; ?>
             </ul>
 
             <!-- <li class="mdl-list__item">

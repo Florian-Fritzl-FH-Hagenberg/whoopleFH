@@ -207,6 +207,10 @@ a img {
 }
 
 /* error */
+#searchButton{
+    position: fixed !important;
+}
+
 .mdl-textfield .mdl-button {
     position: fixed !important;
 }
