@@ -119,6 +119,7 @@ $(function () {
         $.ajax({
             url: 'service.php',
             data: {action: 'login', username: username, password: password},
+            dataType: 'text',
             type: 'post',
             success: function (output) {
                 alert(output);
@@ -135,6 +136,7 @@ $(function () {
         $.ajax({
             url: 'service.php',
             data: {action: 'register', username: username, email: email, password: password},
+            dataType: 'text',
             type: 'post',
             success: function (output) {
                 alert(output);

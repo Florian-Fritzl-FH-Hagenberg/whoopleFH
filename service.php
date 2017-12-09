@@ -28,9 +28,9 @@ function login($username, $password)
     if ($rows === 1) {
         $_SESSION['username'] = $username;
         // Redirect user to dashboard.php
-        echo "LOGIN";
+        echo 'LOGIN';
     } else {
-        echo "INCORRECT";
+        echo 'INCORRECT';
     }
 }
 
