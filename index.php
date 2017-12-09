@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,8 +18,6 @@
 </head>
 <body>
 <div class="materialContainer">
-
-
     <div class="box">
 
         <div class="title">LOGIN</div>
