@@ -25,13 +25,16 @@ function login($username, $password)
     $query = "SELECT * FROM wUser, wAuthentication WHERE wUser.wAuthentication_ID = wAuthentication.wAuthentication_ID AND wUser_Username = '$username' AND wAuthentication_PW = '$password'";
     $result = mysqli_query($connection, $query);
     $rows = mysqli_num_rows($result);
+
+    $response = array();
     if ($rows === 1) {
         $_SESSION['username'] = $username;
-        // Redirect user to dashboard.php
-        echo 'LOGIN';
+        $response['status'] = 'success';
     } else {
-        echo 'INCORRECT';
+        echo "INCORRECT";
+        $response['status'] = 'error';
     }
+    echo json_encode($response);
 }
 
 function register($username, $email, $password)

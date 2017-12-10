@@ -119,10 +119,14 @@ $(function () {
         $.ajax({
             url: 'service.php',
             data: {action: 'login', username: username, password: password},
-            dataType: 'text',
             type: 'post',
             success: function (output) {
-                alert(output);
+                var data = $.parseJSON(output);
+                if (data.status == 'error') {
+                    alert("Incorrect User or Password");
+                } else {
+                    location.reload();
+                }
             }
         });
     });
@@ -139,7 +143,12 @@ $(function () {
             dataType: 'text',
             type: 'post',
             success: function (output) {
-                alert(output);
+                var data = $.parseJSON(output);
+                if (data.status == 'error') {
+                    alert("Registration not possible");
+                } else {
+                    location.reload();
+                }
             }
         });
     });
