@@ -4,6 +4,7 @@ include("authentication.php");
 //require database for user information
 require("database.php");
 ?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -28,28 +29,15 @@ require("database.php");
     <meta name="msapplication-TileColor" content="#3372DF">
 
     <link rel="shortcut icon" href="images/favicon.png">
-
-    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
-    <!--
-    <link rel="canonical" href="http://www.example.com/">
-    -->
-
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.cyan-light_blue.min.css">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        #view-source {
-            position: fixed;
-            display: block;
-            right: 0;
-            bottom: 0;
-            margin-right: 40px;
-            margin-bottom: 40px;
-            z-index: 900;
-        }
-    </style>
+
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script src="jquery-3.2.1.js"></script>
+    <script src="script_dashboard.js"></script>
 </head>
 <body>
 <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
@@ -112,128 +100,36 @@ require("database.php");
     </div>
     <main class="mdl-layout__content mdl-color--grey-100">
         <div class="mdl-grid demo-content">
-            <!--
-            <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
-              <svg fill="currentColor" width="200px" height="200px" viewBox="0 0 1 1" class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--3-col-desktop">
-                <use xlink:href="#piechart" mask="url(#piemask)" />
-                <text x="0.5" y="0.5" font-family="Roboto" font-size="0.3" fill="#888" text-anchor="middle" dy="0.1">82<tspan font-size="0.2" dy="-0.07">%</tspan></text>
-              </svg>
-              <svg fill="currentColor" width="200px" height="200px" viewBox="0 0 1 1" class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--3-col-desktop">
-                <use xlink:href="#piechart" mask="url(#piemask)" />
-                <text x="0.5" y="0.5" font-family="Roboto" font-size="0.3" fill="#888" text-anchor="middle" dy="0.1">82<tspan dy="-0.07" font-size="0.2">%</tspan></text>
-              </svg>
-              <svg fill="currentColor" width="200px" height="200px" viewBox="0 0 1 1" class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--3-col-desktop">
-                <use xlink:href="#piechart" mask="url(#piemask)" />
-                <text x="0.5" y="0.5" font-family="Roboto" font-size="0.3" fill="#888" text-anchor="middle" dy="0.1">82<tspan dy="-0.07" font-size="0.2">%</tspan></text>
-              </svg>
-              <svg fill="currentColor" width="200px" height="200px" viewBox="0 0 1 1" class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--3-col-desktop">
-                <use xlink:href="#piechart" mask="url(#piemask)" />
-                <text x="0.5" y="0.5" font-family="Roboto" font-size="0.3" fill="#888" text-anchor="middle" dy="0.1">82<tspan dy="-0.07" font-size="0.2">%</tspan></text>
-              </svg>
-            </div>
-            -->
-            <!-- Three Line List with secondary info and action -->
 
+            <!-- Welcome-->
             <div class="mdl-cell mdl-cell--8-col">
                 <p>Login Successful. Welcome <?php echo $_SESSION['username']; ?>!</p>
             </div>
+
+            <!-- Social Media already added header-->
             <div class="mdl-cell mdl-cell--8-col">
                 <a>Already added Social Websites</a>
             </div>
 
-            <?php
-            $query = "SELECT wwhoople.wWhoople_Website, wwhoople.wWhoople_AccountName FROM `wwhoople`, wuser where wuser.wUser_ID = wwhoople.wUser_ID and wusername = '$_SESSION[username]';";
-            $result = mysqli_query($connection, $query);
-            $connection->close();
-            ?>
-
-            <?php debug_to_console($result[1][0]);?>
-
-            <?php function debug_to_console( $data ) {
-                $output = $data;
-                if ( is_array( $output ) )
-                    $output = implode( ',', $output);
-
-                echo "<script>console.log( 'Debug Objects: " . $output . "' );</script>";
-            };?>
-
-<!--
-            <ul class="demo-list-control mdl-list">
-                <!--?php foreach ($result as $whoople): ?>
-                    <li class="mdl-list__item">
-                        <span class="mdl-list__item-primary-content">
-                            <i class="material-icons  mdl-list__item-avatar">person</i>
-                            <!--?= $whoople ?>
-                        </span>
-                    </li>
-                <!--?php endforeach; ?>
+            <!-- Social Media already added content-->
+            <ul class="demo-list-control mdl-list" id="socialMediaAdded">
+                <li class="mdl-list__item">
+                    <span class="mdl-list__item-primary-content">
+                        <i class="material-icons  mdl-list__item-avatar">person</i>
+                        Facebook
+                    </span>
+                    <span>
+                        Florian Fritzl
+                    </span>
+                </li>
             </ul>
 
-            <!-- <li class="mdl-list__item">
-                 <span class="mdl-list__item-primary-content">
-                     <i class="material-icons  mdl-list__item-avatar">person</i>
-                         Facebook
-                 </span>
-                 <span class="mdl-list__item-secondary-action">
-                     <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">add_circle_outline</i></a>
-                 </span>
-             </li>
-             <li class="mdl-list__item">
-                 <span class="mdl-list__item-primary-content">
-                     <i class="material-icons  mdl-list__item-avatar">person</i>
-                         Twitter
-                 </span>
-                 <span class="mdl-list__item-secondary-action">
-                     <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">add_circle_outline</i></a>
-                 </span>
-             </li>
-             <li class="mdl-list__item">
-                 <span class="mdl-list__item-primary-content">
-                     <i class="material-icons  mdl-list__item-avatar">person</i>
-                         Instagram
-                 </span>
-                 <span class="mdl-list__item-secondary-action">
-                     <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">add_circle_outline</i></a>
-                 </span>
-             </li>
-             </li>
-             <li class="mdl-list__item">
-                 <span class="mdl-list__item-primary-content">
-                     <i class="material-icons  mdl-list__item-avatar">person</i>
-                         Google+
-                 </span>
-                 <span class="mdl-list__item-secondary-action">
-                     <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">add_circle_outline</i></a>
-                 </span>
-             </li>
-             </li>
-             <li class="mdl-list__item">
-                 <span class="mdl-list__item-primary-content">
-                     <i class="material-icons  mdl-list__item-avatar">person</i>
-                         Skype
-                 </span>
-                 <span class="mdl-list__item-secondary-action">
-                     <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">add_circle_outline</i></a>
-                 </span>
-             </li>
-             </li>
-             <li class="mdl-list__item">
-                 <span class="mdl-list__item-primary-content">
-                     <i class="material-icons  mdl-list__item-avatar">person</i>
-                         WhatsApp
-                 </span>
-                 <span class="mdl-list__item-secondary-action">
-                     <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">add_circle_outline</i></a>
-                 </span>
-             </li>
-             </ul>
-             -->
-
-
+            <!-- Social Media available added header-->
             <div class="mdl-cell mdl-cell--8-col">
                 <a>Avalible Social Websites</a>
             </div>
 
+            <!-- Social Media available added content-->
             <ul class="demo-list-control mdl-list">
                 <li class="mdl-list__item">
                     <span class="mdl-list__item-primary-content">
@@ -245,61 +141,8 @@ require("database.php");
                                 class="material-icons">add_circle_outline</i></a>
                     </span>
                 </li>
-                <li class="mdl-list__item">
-                    <span class="mdl-list__item-primary-content">
-                        <i class="material-icons  mdl-list__item-avatar">person</i>
-                            Twitter
-                    </span>
-                    <span class="mdl-list__item-secondary-action">
-                        <a class="mdl-list__item-secondary-action" href="#"><i
-                                class="material-icons">add_circle_outline</i></a>
-                    </span>
-                </li>
-                <li class="mdl-list__item">
-                    <span class="mdl-list__item-primary-content">
-                        <i class="material-icons  mdl-list__item-avatar">person</i>
-                            Instagram
-                    </span>
-                    <span class="mdl-list__item-secondary-action">
-                        <a class="mdl-list__item-secondary-action" href="#"><i
-                                class="material-icons">add_circle_outline</i></a>
-                    </span>
-                </li>
-                </li>
-                <li class="mdl-list__item">
-                    <span class="mdl-list__item-primary-content">
-                        <i class="material-icons  mdl-list__item-avatar">person</i>
-                            Google+
-                    </span>
-                    <span class="mdl-list__item-secondary-action">
-                        <a class="mdl-list__item-secondary-action" href="#"><i
-                                class="material-icons">add_circle_outline</i></a>
-                    </span>
-                </li>
-                </li>
-                <li class="mdl-list__item">
-                    <span class="mdl-list__item-primary-content">
-                        <i class="material-icons  mdl-list__item-avatar">person</i>
-                            Skype
-                    </span>
-                    <span class="mdl-list__item-secondary-action">
-                        <a class="mdl-list__item-secondary-action" href="#"><i
-                                class="material-icons">add_circle_outline</i></a>
-                    </span>
-                </li>
-                </li>
-                <li class="mdl-list__item">
-                    <span class="mdl-list__item-primary-content">
-                        <i class="material-icons  mdl-list__item-avatar">person</i>
-                            WhatsApp
-                    </span>
-                    <span class="mdl-list__item-secondary-action">
-                        <a class="mdl-list__item-secondary-action" href="#"><i
-                                class="material-icons">add_circle_outline</i></a>
-                    </span>
-                </li>
-
             </ul>
+<<<<<<< HEAD
 
 
             <!--
@@ -367,9 +210,9 @@ require("database.php");
 
             -->
         </div>
+=======
+>>>>>>> d54755ce6395d1078b8ff217e03d0dd663cc512b
     </main>
 </div>
-
-<script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 </body>
 </html>

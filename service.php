@@ -2,7 +2,6 @@
 session_start();
 require_once('database.php');
 
-
 //Service Methods
 if (isset($_POST['action']) && !empty($_POST['action'])) {
     $action = $_POST['action'];
@@ -20,15 +19,19 @@ if (isset($_POST['action']) && !empty($_POST['action'])) {
         case 'registerValid' :
             registerValid($_POST['username'], $_POST['email'], $_POST['password'], $_POST['repassword']);
             break;
+        case 'getWhooples' :
+            getWhooples($_SESSION['username']);
+            break;
         // ...etc...
     }
 }
+
 function login($username, $password)
 {
     //TODO CONNECTION aus database.php holen
     $connection = mysqli_connect("localhost", "root", "", "whoople");
     //Checking is user existing in the database or not
-    $query = "SELECT * FROM wUser, wAuthentication WHERE wUser.wAuthentication_ID = wAuthentication.wAuthentication_ID AND wUser_Username = '$username' AND wAuthentication_PW = '$password'";
+    $query = "SELECT * FROM wUser, wAuthentication WHERE wUser.wAuthentication_ID = wAuthentication.wAuthentication_ID AND wUser_Username = '$username' AND wAuthentication_PW = '$password';";
     $result = mysqli_query($connection, $query);
     $rows = mysqli_num_rows($result);
 
@@ -46,7 +49,6 @@ function register($username, $email, $password)
 {
     //TODO CONNECTION aus database.php holen
     //TODO überprüfen ob Username und Email noch nicht vergeben sind
-
     $connection = mysqli_connect("localhost", "root", "", "whoople");
     //Checking is user existing in the database or not
     $query = "INSERT INTO `wauthentication` (`wAuthentication_ID`, `wAuthentication_PW`, `wAuthentication_TwoWay`) VALUES (NULL, '$password', NULL);";
@@ -162,4 +164,17 @@ function registerValid($username, $email, $password, $repassword){
     echo json_encode($response);
 }
 
+function getWhooples($username)
+{
+    //TODO CONNECTION aus database.php holen
+    $connection = mysqli_connect("localhost", "root", "", "whoople");
+
+    $query = "SELECT wWhoople.wWhoople_Website, wWhoople.wWhoople_AccountName FROM wWhoople, wUser WHERE wUser.wUser_ID = wWhoople.wUser_ID AND wUser.wUser_Username = '$username';";
+    $result = mysqli_query($connection, $query);
+    $rows = array();
+    while($r = mysqli_fetch_assoc($result)) {
+        $rows[] = $r;
+    }
+    echo json_encode($rows);
+}
 ?>
