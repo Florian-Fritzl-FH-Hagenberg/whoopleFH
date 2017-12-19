@@ -116,7 +116,6 @@ $(function () {
     $("#loginButton").click(function () {
         var username = $("#loginusername").val();
         var password = $("#loginpassword").val();
-
         $.ajax({
             url: 'service.php',
             data: {action: 'loginValid', username: username, password: password},
@@ -125,21 +124,21 @@ $(function () {
                 var data = $.parseJSON(output);
 
                 //user valid?
-                if (data.status === 'userError') {
-                    $("#loginUserError").remove();
-                    $('#loginusername').after('<span id ="loginUserError" class="errorMsg">Please enter a username!</p>');
+                if (data['userError'] === 'empty') {
+                    $("#loginUserEmpty").remove();
+                    $('#loginusername').after('<span id ="loginUserEmpty" class="errorMsg">Please enter a username!</p>');
                 } else{
-                    $("#loginUserError").remove();
+                    $("#loginUserEmpty").remove();
                 }
                 //password valid?
-                if (data.status === 'passError') {
-                    $("#loginPassError").remove();
-                    $('#loginpassword').after('<span id ="loginPassError" class="errorMsg">Please enter a password!</p>');
+                if (data['passError'] === 'empty') {
+                    $("#loginPassEmpty").remove();
+                    $('#loginpassword').after('<span id ="loginPassEmpty" class="errorMsg">Please enter a password!</p>');
                 } else{
-                    $("#loginPassError").remove();
+                    $("#loginPassEmpty").remove();
                 }
                 //when everything is valid -> continue
-                if (data.status === 'success') {
+                if (data['valid'] === 'success') {
                     $.ajax({
                         url: 'service.php',
                         data: {action: 'login', username: username, password: password},
@@ -174,72 +173,72 @@ $(function () {
                 var data = $.parseJSON(output);
 
                 //user valid?
-                if (data.status === 'userError1') {
-                    $("#registerUserError1").remove();
-                    $('#username').after('<span id ="registerUserError1">Please enter a username!</p>');
+                if (data['userError'] === 'empty') {
+                    $("#registerUserEmpty").remove();
+                    $('#username').after('<span id ="registerUserEmpty" class="errorMsg">Please enter a username!</p>');
                 }else{
-                    $("#registerUserError1").remove();
+                    $("#registerUserEmpty").remove();
                 }
-                if (data.status === 'userError2') {
-                    $("#registerUserError2").remove();
-                    $('#username').after('<span id ="registerUserError2">Username must have at least 3 characters!</p>');
+                if (data['userError'] === 'tooShort') {
+                    $("#registerUserTooShort").remove();
+                    $('#username').after('<span id ="registerUserTooShort" class="errorMsg">Username must have at least 3 characters!</p>');
                 } else {
-                    $("#registerUserError2").remove();
+                    $("#registerUserTooShort").remove();
                 }
-                if (data.status === 'userError3') {
-                    $("#registerUserError3").remove();
-                    $('#username').after('<span id ="registerUserError3">Username already in database, choose another!</p>');
+                if (data['userError'] === 'alreadyUsed') {
+                    $("#registerUserAlreadyUsed").remove();
+                    $('#username').after('<span id ="registerUserAlreadyUsed" class="errorMsg">Username already in database, choose another!</p>');
                 } else {
-                    $("#registerUserError3").remove();
+                    $("#registerUserAlreadyUsed").remove();
                 }
                 //e-mail valid?
-                if (data.status === 'emailError1') {
-                    $("#registerEmailError1").remove();
-                    $('#mail').after('<span id ="registerEmailError1">Please enter a e-mail address!</p>');
+                if (data['emailError'] === 'empty') {
+                    $("#registerEmailEmpty").remove();
+                    $('#mail').after('<span id ="registerEmailEmpty" class="errorMsg">Please enter a e-mail address!</p>');
                 }else{
-                    $("#registerEmailError1").remove();
+                    $("#registerEmailEmpty").remove();
                 }
-                if (data.status === 'emailError2') {
-                    $("#registerEmailError2").remove();
-                    $('#mail').after('<span id ="registerEmailError2">Please enter a valid e-mail address!</p>');
+                if (data['emailError'] === 'notValid') {
+                    $("#registerEmailNotValid").remove();
+                    $('#mail').after('<span id ="registerEmailNotValid" class="errorMsg">Please enter a valid e-mail address!</p>');
                 }else{
-                    $("#registerEmailError2").remove();
+                    $("#registerEmailNotValid").remove();
                 }
-                if (data.status === 'emailError3') {
-                    $("#registerEmailError3").remove();
-                    $('#mail').after('<span id ="registerEmailError3">E-mail already in database, choose another!</p>');
+                if (data['emailError'] === 'alreadyUsed') {
+                    $("#registerEmailAlreadyUsed").remove();
+                    $('#mail').after('<span id ="registerEmailAlreadyUsed" class="errorMsg">E-mail already in database, choose another!</p>');
                 }else{
-                    $("#registerEmailError3").remove();
+                    $("#registerEmailAlreadyUsed").remove();
                 }
                 //password valid?
-                if (data.status === 'passError1') {
-                    $("#registerPassError1").remove();
-                    $('#regpass').after('<span id ="registerPassError1">Please enter a password!</p>');
+                if (data['passError'] === 'empty') {
+                    $("#registerPassEmpty").remove();
+                    $('#regpass').after('<span id ="registerPassEmpty" class="errorMsg">Please enter a password!</p>');
                 }else{
-                    $("#registerPassError1").remove();
+                    $("#registerPassEmpty").remove();
                 }
-                if (data.status === 'passError2') {
-                    $("#registerPassError2").remove();
-                    $('#regpass').after('<span id ="registerPassError2">Password must have at least 6 characters!</p>');
+                if (data['passError'] === 'tooShort') {
+                    $("#registerPassTooShort").remove();
+                    $('#regpass').after('<span id ="registerPassTooShort" class="errorMsg">Password must have at least 6 characters!</p>');
                 }else{
-                    $("#registerPassError2").remove();
+                    $("#registerPassTooShort").remove();
                 }
                 //repassword valid?
-                if (data.status === 'repassError1') {
-                    $("#registerRepassError1").remove();
-                    $('#reregpass').after('<span id ="registerRepassError1">Please enter password again!</p>');
+                if (data['repassError'] === 'empty') {
+                    $("#registerRepassEmpty").remove();
+                    $('#reregpass').after('<span id ="registerRepassEmpty" class="errorMsg">Please enter password again!</p>');
                 }else{
-                    $("#registerRepassError1").remove();
+                    $("#registerRepassEmpty").remove();
                 }
-                if (data.status === 'repassError2') {
-                    $("#registerRepassError2").remove();
-                    $('#reregpass').after('<span id ="registerRepassError2">Passwords do not match!</p>');
+                if (data['repassError'] === 'notMatching') {
+                    $("#registerRepassNotMatching").remove();
+                    $('#reregpass').after('<span id ="registerRepassNotMatching" class="errorMsg">Passwords do not match!</p>');
                 }else{
-                    $("#registerRepassError2").remove();
+                    $("#registerRepassNotMatching").remove();
                 }
 
                 //when everything is valid -> continue
-                if(data.status === 'success'){
+                if(data['valid'] === 'success'){
                     $.ajax({
                         url: 'service.php',
                         data: {action: 'register', username: username, email: email, password: password},
@@ -249,7 +248,7 @@ $(function () {
                             var data = $.parseJSON(output);
                             if (data.status === 'error') {
                                 $("#registerError.errorMsg").remove();
-                                $('.title').after('<span id = "registerError">Registration not possible!</p>');
+                                $('.title').after('<span id = "registerError" class="errorMsg">Registration not possible!</p>');
                             } else {
                                 $("#registerError.errorMsg").remove();
                                 location.reload();

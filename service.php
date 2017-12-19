@@ -68,7 +68,7 @@ function register($username, $email, $password)
 function loginValid($username, $password){
 
     $response = array();
-    $isValid = true;
+    $valid = true;
 
     // clean user inputs to prevent sql injections
     $username = trim($_POST['username']);
@@ -81,12 +81,18 @@ function loginValid($username, $password){
 
     //username and password validation
     if(empty($username)){
-        $response['status'] = 'userError';
-    } else if (empty($password)) {
-        $response['status'] = 'passError';
-    }else {
-        $response['status'] = 'success';
+        $response['userError'] = 'empty';
+        $valid = false;
     }
+    if (empty($password)) {
+        $response['passError'] = 'empty';
+        $valid = false;
+    }
+
+    if($valid == true){
+        $response['valid'] = 'success';
+    }
+
 
     echo json_encode($response);
 }
@@ -95,6 +101,7 @@ function registerValid($username, $email, $password, $repassword){
 
     $connection = mysqli_connect("localhost", "root", "", "whoople");
     $response = array();
+    $valid = true;
 
     // clean user inputs to prevent sql injections
     $username = trim($_POST['username']);
@@ -115,48 +122,62 @@ function registerValid($username, $email, $password, $repassword){
 
     //username validation
     if (empty($username)) {
-        $response['status'] = "userError1";
-    } else if (!empty($username) && strlen($username) < 3) {
-        $response['status'] = "userError2";
-    } else {
-        // check username exist or not
-        $query = "SELECT wUser_Username FROM wUser WHERE wUser_Username = '$username'";
-        $result = mysqli_query($connection, $query);
-        $rows = mysqli_num_rows($result);
-        if ($rows != 0) {
-            $response['status'] = "userError3";
-        }
+        $response['userError'] = 'empty';
+        $valid = false;
     }
+    if(!empty($username) && strlen($username) < 3) {
+        $response['userError'] = 'tooShort';
+        $valid = false;
+    }
+    // check username exist or not
+    $query = "SELECT wUser_Username FROM wUser WHERE wUser_Username = '$username'";
+    $result = mysqli_query($connection, $query);
+    $rows = mysqli_num_rows($result);
+    if ($rows != 0) {
+        $response['userError'] = 'alreadyUsed';
+        $valid = false;
+    }
+
 
     //email validation
     if (empty($email)) {
-        $response['status'] = "emailError1";
-    } else if (!filter_var($email,FILTER_VALIDATE_EMAIL) ) {
-        $response['status'] = "emailError2";
-    } else {
-        // check email exist or not
-        $query = "SELECT wUser_Mail FROM wUser WHERE wUser_Mail = '$email'";
-        $result = mysqli_query($connection, $query);
-        $rows = mysqli_num_rows($result);
-        if($rows != 0){
-            $response['status'] = "emailError3";
-        }
+        $response['emailError'] = 'empty';
+        $valid = false;
+    }
+    if (!empty($email) && !filter_var($email,FILTER_VALIDATE_EMAIL) ) {
+        $response['emailError'] = 'notValid';
+        $valid = false;
+    }
+    // check email exist or not
+    $query = "SELECT wUser_Mail FROM wUser WHERE wUser_Mail = '$email'";
+    $result = mysqli_query($connection, $query);
+    $rows = mysqli_num_rows($result);
+    if($rows != 0){
+        $response['status'] = 'alreadyUsed';
+        $valid = false;
     }
 
     // password validation
     if (empty($password)){
-        $response['status'] = "passError1";
-    } else if(strlen($password) < 6) {
-        $response['status'] = "passError2";
+        $response['passError'] = 'empty';
+        $valid = false;
+    }
+    if(!empty($password) && strlen($password) < 6) {
+        $response['passError'] = 'tooShort';
+        $valid = false;
     }
 
     //repassword validation
     if (empty($repassword)){
-        $response['status'] = "repassError1";
-    } else if($repassword != $password){
-        $response['status'] = "repassError2";
-    } else {
-        $response['status'] = "success";
+        $response['repassError'] = "empty";
+        $valid = false;
+    }
+    if(!empty($repassword) && $repassword != $password){
+        $response['repassError'] = "notMatching";
+        $valid = false;
+    }
+    if($valid == true){
+        $response['valid'] = "success";
     }
 
     //response status = success
