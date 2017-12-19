@@ -1248,3 +1248,7 @@ html {
     list-style-type: none;
     outline: none;
 }
+
+.errorMsg{
+    color: red;
+}

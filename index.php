@@ -1,9 +1,9 @@
 <?php
-    session_start();
-    if(isset($_SESSION["username"])){
-        header("Location: dashboard.php");
-        exit();
-    }
+session_start();
+if (isset($_SESSION["username"])) {
+    header("Location: dashboard.php");
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -27,18 +27,17 @@
 <body>
 <div class="materialContainer">
     <div class="box">
-
         <div class="title">LOGIN</div>
 
         <div class="input">
             <label for="loginusername">Username</label>
-            <input type="text" name="loginusername" id="loginusername">
+            <input type="text" name="loginusername" id="loginusername" required>
             <span class="spin"></span>
         </div>
 
         <div class="input">
             <label for="loginpassword">Password</label>
-            <input type="password" name="loginpassword" id="loginpassword">
+            <input type="password" name="loginpassword" id="loginpassword" required>
             <span class="spin"></span>
         </div>
 
@@ -50,6 +49,7 @@
 
     </div>
 
+
     <div class="overbox">
         <div class="material-button alt-2"><span class="shape"></span></div>
 
@@ -57,25 +57,25 @@
 
         <div class="input">
             <label for="username">Username</label>
-            <input type="text" name="username" id="username">
+            <input type="text" name="username" id="username" required>
             <span class="spin"></span>
         </div>
 
         <div class="input">
             <label for="mail">E-Mail</label>
-            <input type="text" name="mail" id="mail">
+            <input type="text" name="mail" id="mail" required>
             <span class="spin"></span>
         </div>
 
         <div class="input">
             <label for="regpass">Password</label>
-            <input type="password" name="regpass" id="regpass">
+            <input type="password" name="regpass" id="regpass" required>
             <span class="spin"></span>
         </div>
 
         <div class="input">
             <label for="reregpass">Repeat Password</label>
-            <input type="password" name="reregpass" id="reregpass">
+            <input type="password" name="reregpass" id="reregpass" required>
             <span class="spin"></span>
         </div>
 
