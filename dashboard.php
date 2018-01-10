@@ -136,10 +136,22 @@ require("database.php");
                         <i class="material-icons  mdl-list__item-avatar">person</i>
                             Facebook
                     </span>
-                    <span class="mdl-list__item-secondary-action">
-                        <a class="mdl-list__item-secondary-action" href="#"><i
-                                class="material-icons">add_circle_outline</i></a>
-                    </span>
+
+                    <div class="popup" onclick="myFunction()">
+                        <span class="mdl-list__item-secondary-action">
+                        <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">add_circle_outline</i></a>
+                        <span class="popuptext" id="myPopup">Wtf is this text?</span>
+                        </span>
+                    </div>
+
+                    <script>
+                        // When the user clicks on div, open the popup
+                        function myFunction() {
+                            var popup = document.getElementById("myPopup");
+                            popup.classList.toggle("show");
+                        }
+                    </script>
+
                 </li>
             </ul>
 <<<<<<< HEAD
