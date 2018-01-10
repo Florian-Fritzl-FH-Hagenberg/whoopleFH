@@ -210,8 +210,6 @@ require("database.php");
 
             -->
         </div>
-=======
->>>>>>> d54755ce6395d1078b8ff217e03d0dd663cc512b
     </main>
 </div>
 </body>

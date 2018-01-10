@@ -33,8 +33,6 @@ if (isset($_SESSION["username"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <title>whoople</title>
 
-<<<<<<< HEAD
-=======
     <!-- Add to homescreen for Chrome on Android -->
     <meta name="mobile-web-app-capable" content="yes">
     <link rel="icon" sizes="192x192" href="images/android-desktop.png">
@@ -55,14 +53,12 @@ if (isset($_SESSION["username"])) {
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.cyan-light_blue.min.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="styles.css">
->>>>>>> d54755ce6395d1078b8ff217e03d0dd663cc512b
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"/>
     <link href="//fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900&subset=latin,latin-ext" rel="stylesheet"/>
 
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <script src="jquery-3.2.1.js"></script>
     <script src="script.js"></script>
-
 
     <!-- Page styles -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
