@@ -40,6 +40,8 @@ require("database.php");
     <script src="script_dashboard.js"></script>
 </head>
 <body>
+
+
 <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
     <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
         <div class="mdl-layout__header-row">
@@ -139,9 +141,75 @@ require("database.php");
 
                     <div class="popup" onclick="myFunction()">
                         <span class="mdl-list__item-secondary-action">
-                        <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">add_circle_outline</i></a>
+
+                            <div class="fab">
+    <i class="material-icons fab-icon">add</i>
+
+    <form class='cntt-wrapper'>
+        <div id="fab-hdr">
+            <h3>Add Whoople</h3>
+        </div>
+
+        <div class="cntt">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" id="text1" />
+                <label class="mdl-textfield__label" for="text2">Whoople-Name</label>
+            </div>
+
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" id="text2" />
+                <label class="mdl-textfield__label" for="text2">Account-Name</label>
+            </div>
+
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" id="text3" />
+                <label class="mdl-textfield__label" for="text3">Whoople-Link</label>
+            </div>
+        </div>
+
+        <div class="btn-wrapper">
+            <button class="mdl-button mdl-js-button" id="cancel">Cancel</button>
+            <button class="mdl-button mdl-js-button mdl-button--primary" id="submit">Submit</button>
+        </div>
+
+    </form>
+</div>
+
+                            <script>
+    //Variables
+    var overlay = $("#overlay"),
+        fab = $(".fab"),
+        cancel = $("#cancel"),
+        submit = $("#submit");
+
+    //fab click
+    fab.on('click', openFAB);
+    overlay.on('click', closeFAB);
+    cancel.on('click', closeFAB);
+
+    function openFAB(event) {
+        if (event) event.preventDefault();
+        fab.addClass('active');
+        overlay.addClass('dark-overlay');
+
+    }
+
+    function closeFAB(event) {
+        if (event) {
+            event.preventDefault();
+            event.stopImmediatePropagation();
+        }
+
+        fab.removeClass('active');
+        overlay.removeClass('dark-overlay');
+
+    }
+</script>
+
+
+                        <!--<a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">add_circle_outline</i></a>
                         <span class="popuptext" id="myPopup">Wtf is this text?</span>
-                        </span>
+                        </span> -->
                     </div>
 
                     <script>
@@ -154,8 +222,6 @@ require("database.php");
 
                 </li>
             </ul>
-<<<<<<< HEAD
-
 
             <!--
             <div class="demo-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--8-col">
