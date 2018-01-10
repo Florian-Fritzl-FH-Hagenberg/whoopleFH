@@ -23,7 +23,7 @@ if (isset($_POST['action']) && !empty($_POST['action'])) {
             getWhooples($_SESSION['username']);
             break;
         case 'addWhooples' :
-            addWhooples($_POST['whoopleName'], $_POST['accountName'], $_POST['whoopleLink']);
+            addWhooples($_SESSION['username'], $_POST['whoopleName'], $_POST['accountName'], $_POST['whoopleLink']);
             break;
         // ...etc...
     }
@@ -200,7 +200,7 @@ function getWhooples($username)
     echo json_encode($rows);
 }
 
-function addWhooples($whoopleName, $accountName, $whoopleLink)
+function addWhooples($username, $whoopleName, $accountName, $whoopleLink)
 {
     $connection = mysqli_connect("localhost", "root", "", "whoople");
     $response = array();
@@ -221,9 +221,11 @@ function addWhooples($whoopleName, $accountName, $whoopleLink)
         $valid = false;
     }
 
-    //if($valid ==true) {
-        //$query = "INSERT INTO wWhoople.wWhoople_Website, wWhoople.wWhoople_AccountName VALUES  ";
-    //}
+    if($valid == true) {
+        $response['valid'] = 'success';
+        $query = "INSERT INTO `wwhoople` (`wWhoople_ID`, `wUser_ID`, `wWhoople_Website`, `wWhoople_AccountName`) VALUES (NULL, '$username', '$whoopleLink', '$whoopleName');";
+        mysqli_query($connection, $query);
+    }
 
     echo json_encode($response);
 }

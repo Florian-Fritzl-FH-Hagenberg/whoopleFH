@@ -47,6 +47,9 @@ window.onload = function () {
                 } else{
                     $("#whoopleLinkEmpty").remove();
                 }
+                if(data['valid'] === 'success'){
+                    location.reload()
+                }
             }
         });
     });
