@@ -22,6 +22,9 @@ if (isset($_POST['action']) && !empty($_POST['action'])) {
         case 'getWhooples' :
             getWhooples($_SESSION['username']);
             break;
+        case 'addWhooples' :
+            addWhooples($_POST['whoopleName'], $_POST['accountName'], $_POST['whoopleLink']);
+            break;
         // ...etc...
     }
 }
@@ -180,8 +183,6 @@ function registerValid($username, $email, $password, $repassword){
         $response['valid'] = "success";
     }
 
-    //response status = success
-
     echo json_encode($response);
 }
 
@@ -197,5 +198,33 @@ function getWhooples($username)
         $rows[] = $r;
     }
     echo json_encode($rows);
+}
+
+function addWhooples($whoopleName, $accountName, $whoopleLink)
+{
+    $connection = mysqli_connect("localhost", "root", "", "whoople");
+    $response = array();
+    $valid = true;
+
+    if(empty($whoopleName)) {
+        $response['whoopleNameError'] = 'empty';
+        $valid = false;
+    }
+
+    if(empty($accountName)) {
+        $response['accountNameError'] = 'empty';
+        $valid = false;
+    }
+
+    if(empty($whoopleLink)) {
+        $response['whoopleLinkError'] = 'empty';
+        $valid = false;
+    }
+
+    //if($valid ==true) {
+        //$query = "INSERT INTO wWhoople.wWhoople_Website, wWhoople.wWhoople_AccountName VALUES  ";
+    //}
+
+    echo json_encode($response);
 }
 ?>

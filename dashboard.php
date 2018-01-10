@@ -152,17 +152,17 @@ require("database.php");
 
         <div class="cntt">
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="text" id="text1" />
+                <input class="mdl-textfield__input" type="text" id="whoopleName" />
                 <label class="mdl-textfield__label" for="text2">Whoople-Name</label>
             </div>
 
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="text" id="text2" />
+                <input class="mdl-textfield__input" type="text" id="accountName" />
                 <label class="mdl-textfield__label" for="text2">Account-Name</label>
             </div>
 
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="text" id="text3" />
+                <input class="mdl-textfield__input" type="text" id="whoopleLink" />
                 <label class="mdl-textfield__label" for="text3">Whoople-Link</label>
             </div>
         </div>
