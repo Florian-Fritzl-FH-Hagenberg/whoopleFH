@@ -1311,7 +1311,7 @@ html {
 .center{margin: 0 auto}
 .m-t-100{margin-top:100px}
 .box {
-    height: 300px;
+    /*height: 300px;*/
     padding: 100px;
 }
 
