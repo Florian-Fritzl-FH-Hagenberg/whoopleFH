@@ -40,6 +40,7 @@ require("database.php");
     <script src="script_dashboard.js"></script>
 </head>
 <body>
+
 <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
     <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
         <div class="mdl-layout__header-row">
@@ -69,17 +70,7 @@ require("database.php");
         <header class="demo-drawer-header">
             <img src="images/user.jpg" class="demo-avatar">
             <div class="demo-avatar-dropdown">
-                <span>hello@example.com</span>
-                <div class="mdl-layout-spacer"></div>
-                <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-                    <i class="material-icons" role="presentation">arrow_drop_down</i>
-                    <span class="visuallyhidden">Accounts</span>
-                </button>
-                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
-                    <li class="mdl-menu__item">hello@example.com</li>
-                    <li class="mdl-menu__item">info@example.com</li>
-                    <li class="mdl-menu__item"><i class="material-icons">add</i>Add another account...</li>
-                </ul>
+                <span><?php echo $_SESSION['username'];?></span>
             </div>
         </header>
         <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
@@ -87,6 +78,8 @@ require("database.php");
                                                                 role="presentation">home</i>Home</a>
             <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons"
                                                        role="presentation">inbox</i>Inbox</a>
+            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                       role="presentation">sentiment_very_satisfied</i>Friends</a>
             <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons"
                                                        role="presentation">forum</i>Newsfeed</a>
             <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons"
@@ -122,10 +115,88 @@ require("database.php");
                         <i class="material-icons  mdl-list__item-avatar">person</i>
                             Facebook
                     </span>
-                    <span class="mdl-list__item-secondary-action">
-                        <a class="mdl-list__item-secondary-action" href="#"><i
-                                class="material-icons">add_circle_outline</i></a>
-                    </span>
+
+                    <div class="popup" onclick="myFunction()">
+                        <span class="mdl-list__item-secondary-action">
+
+                            <div class="fab">
+    <i class="material-icons fab-icon">add</i>
+
+    <form class='cntt-wrapper'>
+        <div id="fab-hdr">
+            <h3>Add Whoople</h3>
+        </div>
+
+        <div class="cntt">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" id="whoopleName" />
+                <label class="mdl-textfield__label" for="text2">Whoople-Name</label>
+            </div>
+
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" id="accountName" />
+                <label class="mdl-textfield__label" for="text2">Account-Name</label>
+            </div>
+
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" id="whoopleLink" />
+                <label class="mdl-textfield__label" for="text3">Whoople-Link</label>
+            </div>
+        </div>
+
+        <div class="btn-wrapper">
+            <button class="mdl-button mdl-js-button" id="cancel">Cancel</button>
+            <button class="mdl-button mdl-js-button mdl-button--primary" id="submit">Submit</button>
+        </div>
+
+    </form>
+</div>
+
+                            <script>
+    //Variables
+    var overlay = $("#overlay"),
+        fab = $(".fab"),
+        cancel = $("#cancel"),
+        submit = $("#submit");
+
+    //fab click
+    fab.on('click', openFAB);
+    overlay.on('click', closeFAB);
+    cancel.on('click', closeFAB);
+
+    function openFAB(event) {
+        if (event) event.preventDefault();
+        fab.addClass('active');
+        overlay.addClass('dark-overlay');
+
+    }
+
+    function closeFAB(event) {
+        if (event) {
+            event.preventDefault();
+            event.stopImmediatePropagation();
+        }
+
+        fab.removeClass('active');
+        overlay.removeClass('dark-overlay');
+
+    }
+</script>
+
+
+                        <!--<a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">add_circle_outline</i></a>
+                        <span class="popuptext" id="myPopup">Wtf is this text?</span>
+                        </span> -->
+                    </div>
+
+                    <script>
+                        // When the user clicks on div, open the popup
+                        function myFunction() {
+                            var popup = document.getElementById("myPopup");
+                            popup.classList.toggle("show");
+                        }
+                    </script>
+
                 </li>
             </ul>
         </div>

@@ -1,4 +1,5 @@
 window.onload = function () {
+    alert('Dokument geladen');
     $.ajax({
         url: 'service.php',
         data: {action: 'getWhooples'},
