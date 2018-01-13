@@ -200,6 +200,20 @@ function getWhooples($username)
     echo json_encode($rows);
 }
 
+function getAvaiableWhooples()
+{
+    //TODO CONNECTION aus database.php holen
+    $connection = mysqli_connect("localhost", "root", "", "whoople");
+
+    $query = "SELECT wAvailable_Whoople.wAvailable_Whoople_Name, wAvailable_Whoople.wAvailable_Whoople_Website FROM wAvailable_Whoople";
+    $result = mysqli_query($connection, $query);
+    $rows = array();
+    while($r = mysqli_fetch_assoc($result)) {
+        $rows[] = $r;
+    }
+    echo json_encode($rows);
+}
+
 function addWhooples($username, $whoopleName, $accountName, $whoopleLink)
 {
     $connection = mysqli_connect("localhost", "root", "", "whoople");

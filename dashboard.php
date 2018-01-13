@@ -40,8 +40,6 @@ require("database.php");
     <script src="script_dashboard.js"></script>
 </head>
 <body>
-
-
 <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
     <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
         <div class="mdl-layout__header-row">
@@ -94,10 +92,6 @@ require("database.php");
             <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons"
                                                        role="presentation">people</i>Gruppen</a>
             <div class="mdl-layout-spacer"></div>
-
-            <!--
-            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons"
-                                                       role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a> -->
         </nav>
     </div>
     <main class="mdl-layout__content mdl-color--grey-100">
@@ -114,21 +108,11 @@ require("database.php");
             </div>
 
             <!-- Social Media already added content-->
-            <ul class="demo-list-control mdl-list" id="socialMediaAdded">
-                <li class="mdl-list__item">
-                    <span class="mdl-list__item-primary-content">
-                        <i class="material-icons  mdl-list__item-avatar">person</i>
-                        Facebook
-                    </span>
-                    <span>
-                        Florian Fritzl
-                    </span>
-                </li>
-            </ul>
+            <ul class="demo-list-control mdl-list" id="socialMediaAdded"></ul>
 
             <!-- Social Media available added header-->
             <div class="mdl-cell mdl-cell--8-col">
-                <a>Avalible Social Websites</a>
+                <a>Available Social Websites</a>
             </div>
 
             <!-- Social Media available added content-->
@@ -138,155 +122,12 @@ require("database.php");
                         <i class="material-icons  mdl-list__item-avatar">person</i>
                             Facebook
                     </span>
-
-                    <div class="popup" onclick="myFunction()">
-                        <span class="mdl-list__item-secondary-action">
-
-                            <div class="fab">
-    <i class="material-icons fab-icon">add</i>
-
-    <form class='cntt-wrapper'>
-        <div id="fab-hdr">
-            <h3>Add Whoople</h3>
-        </div>
-
-        <div class="cntt">
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="text" id="whoopleName" />
-                <label class="mdl-textfield__label" for="text2">Whoople-Name</label>
-            </div>
-
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="text" id="accountName" />
-                <label class="mdl-textfield__label" for="text2">Account-Name</label>
-            </div>
-
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="text" id="whoopleLink" />
-                <label class="mdl-textfield__label" for="text3">Whoople-Link</label>
-            </div>
-        </div>
-
-        <div class="btn-wrapper">
-            <button class="mdl-button mdl-js-button" id="cancel">Cancel</button>
-            <button class="mdl-button mdl-js-button mdl-button--primary" id="submit">Submit</button>
-        </div>
-
-    </form>
-</div>
-
-                            <script>
-    //Variables
-    var overlay = $("#overlay"),
-        fab = $(".fab"),
-        cancel = $("#cancel"),
-        submit = $("#submit");
-
-    //fab click
-    fab.on('click', openFAB);
-    overlay.on('click', closeFAB);
-    cancel.on('click', closeFAB);
-
-    function openFAB(event) {
-        if (event) event.preventDefault();
-        fab.addClass('active');
-        overlay.addClass('dark-overlay');
-
-    }
-
-    function closeFAB(event) {
-        if (event) {
-            event.preventDefault();
-            event.stopImmediatePropagation();
-        }
-
-        fab.removeClass('active');
-        overlay.removeClass('dark-overlay');
-
-    }
-</script>
-
-
-                        <!--<a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">add_circle_outline</i></a>
-                        <span class="popuptext" id="myPopup">Wtf is this text?</span>
-                        </span> -->
-                    </div>
-
-                    <script>
-                        // When the user clicks on div, open the popup
-                        function myFunction() {
-                            var popup = document.getElementById("myPopup");
-                            popup.classList.toggle("show");
-                        }
-                    </script>
-
+                    <span class="mdl-list__item-secondary-action">
+                        <a class="mdl-list__item-secondary-action" href="#"><i
+                                class="material-icons">add_circle_outline</i></a>
+                    </span>
                 </li>
             </ul>
-
-            <!--
-            <div class="demo-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--8-col">
-                <svg fill="currentColor" viewBox="0 0 500 250" class="demo-graph">
-                    <use xlink:href="#chart"/>
-                </svg>
-                <svg fill="currentColor" viewBox="0 0 500 250" class="demo-graph">
-                    <use xlink:href="#chart"/>
-                </svg>
-            </div>
-            <div class="demo-cards mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing">
-                <div
-                    class="demo-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop">
-                    <div class="mdl-card__title mdl-card--expand mdl-color--teal-300">
-                        <h2 class="mdl-card__title-text">Updates</h2>
-                    </div>
-                    <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-                        Non dolore elit adipisicing ea reprehenderit consectetur culpa.
-                    </div>
-                    <div class="mdl-card__actions mdl-card--border">
-                        <a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">Read More</a>
-                    </div>
-                </div>
-                <div class="demo-separator mdl-cell--1-col"></div>
-                <div
-                    class="demo-options mdl-card mdl-color--deep-purple-500 mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--12-col-desktop">
-                    <div class="mdl-card__supporting-text mdl-color-text--blue-grey-50">
-                        <h3>View options</h3>
-                        <ul>
-                            <li>
-                                <label for="chkbox1" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                                    <input type="checkbox" id="chkbox1" class="mdl-checkbox__input">
-                                    <span class="mdl-checkbox__label">Click per object</span>
-                                </label>
-                            </li>
-                            <li>
-                                <label for="chkbox2" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                                    <input type="checkbox" id="chkbox2" class="mdl-checkbox__input">
-                                    <span class="mdl-checkbox__label">Views per object</span>
-                                </label>
-                            </li>
-                            <li>
-                                <label for="chkbox3" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                                    <input type="checkbox" id="chkbox3" class="mdl-checkbox__input">
-                                    <span class="mdl-checkbox__label">Objects selected</span>
-                                </label>
-                            </li>
-                            <li>
-                                <label for="chkbox4" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                                    <input type="checkbox" id="chkbox4" class="mdl-checkbox__input">
-                                    <span class="mdl-checkbox__label">Objects viewed</span>
-                                </label>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="mdl-card__actions mdl-card--border">
-                        <a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--blue-grey-50">Change
-                            location</a>
-                        <div class="mdl-layout-spacer"></div>
-                        <i class="material-icons">location_on</i>
-                    </div>
-                </div>
-            </div>
-
-            -->
         </div>
     </main>
 </div>
