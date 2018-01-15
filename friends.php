@@ -37,7 +37,7 @@ require("database.php");
 
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <script src="jquery-3.2.1.js"></script>
-    <script src="script_dashboard.js"></script>
+    <script src="script_friends.js"></script>
     <script src="script.js"></script>
 </head>
 <body>
@@ -79,7 +79,7 @@ require("database.php");
                                                                 role="presentation">home</i>Home</a>
             <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons"
                                                        role="presentation">inbox</i>Inbox</a>
-            <a class="mdl-navigation__link" href="friends.php"><i class="mdl-color-text--blue-grey-400 material-icons"
+            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons"
                                                        role="presentation">sentiment_very_satisfied</i>Friends</a>
             <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons"
                                                        role="presentation">forum</i>Newsfeed</a>
@@ -91,21 +91,22 @@ require("database.php");
 
     <main class="mdl-layout__content mdl-color--grey-100">
         <div class="mdl-grid demo-content">
-            <!-- Social Media already added header-->
+
+            <!-- Friend Requests header -->
             <div class="mdl-cell mdl-cell--8-col">
-                <a>Already added Social Websites</a>
+                <a>Friend Requests</a>
             </div>
 
-            <!-- Social Media already added content-->
-            <ul class="demo-list-control mdl-list" id="socialMediaAdded"></ul>
+            <!-- Friend Requests content -->
+            <ul class="demo-list-control mdl-list" id="friendRequests"></ul>
 
-            <!-- Social Media available added header-->
+            <!-- Friends header -->
             <div class="mdl-cell mdl-cell--8-col">
-                <a>Available Social Websites</a>
+                <a>Friends</a>
             </div>
 
-            <!-- Social Media available added content-->
-            <ul class="demo-list-control mdl-list" id="socialMediaAvailable"></ul>
+            <!-- Friends content -->
+            <ul class="demo-list-control mdl-list" id="friends"></ul>
         </div>
     </main>
 </div>

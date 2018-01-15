@@ -1,5 +1,4 @@
 window.onload = function () {
-    alert('Dokument geladen');
     $.ajax({
         url: 'service.php',
         data: {action: 'getWhooples'},
@@ -15,8 +14,7 @@ window.onload = function () {
                 text+='</span><span>';
                 text+=data[i]['wWhoople_AccountName'];
                 text+='</span> </li>';
-                $('#socialMediaAdded').append(text);
-                //alert(data[i]['wWhoople_AccountName'] + "  " + data[i]['wWhoople_Website']);
+                parent.append(text);
             }
         }
     });
@@ -28,17 +26,26 @@ window.onload = function () {
         type: 'post',
         success: function (output) {
             var data = $.parseJSON(output);
-            var parent = $("#socialMediaAdded");
+            var parent = $("#socialMediaAvailable");
             for (var i = 0; i<data.length; i++) {
                 var text = "";
-                text+='<li class="mdl-list__item"> <span class="mdl-list__item-primary-content"> <i class="material-icons  mdl-list__item-avatar">person</i>';
-                text+=data[i]['wWhoople_Website'];
-                text+='</span><span>';
-                text+=data[i]['wWhoople_AccountName'];
-                text+='</span> </li>';
-                $('#socialMediaAdded').append(text);
-                //alert(data[i]['wWhoople_AccountName'] + "  " + data[i]['wWhoople_Website']);
+                text+='<li class="mdl-list__item"><span class="mdl-list__item-primary-content"><i class="material-icons  mdl-list__item-avatar">person</i>';
+                text+=data[i]['wAvailable_Whooples_Name'];
+                text+='</span><div class="popup"><span class="mdl-list__item-secondary-action"><div class="fab"><i class="material-icons fab-icon">add</i><form class="cntt-wrapper">';
+                text+='<div id="fab-hdr"><h3>Add Whoople</h3></div><div class="cntt"><div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">';
+                text+='<input class="mdl-textfield__input" type="text" id="' + 'whoopleName' + i;
+                text+='/><label class="mdl-textfield__label" for="whoopleName' + i + '">Whoople-Name</label>';
+                text+='</div><div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"><input class="mdl-textfield__input" type="text" id="accountName' + i + '"/>';
+                text+='<label class="mdl-textfield__label" for="accountName' + i + '">Account-Name</label></div>';
+                text+='<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"><input class="mdl-textfield__input" type="text" id="whoopleLink' + i + '"';
+                text+='/><label class="mdl-textfield__label" for="whoopleLink' + i + '">Whoople-Link</label></div></div>';
+                text+='<div class="btn-wrapper"><button class="mdl-button mdl-js-button" id="cancel' + i + '">Cancel</button><button class="mdl-button mdl-js-button mdl-button--primary" id="';
+                text+='submit' + i + '"';
+                text+='>Submit</button></div></form></div></span></div></li>';
+                parent.append(text);
             }
+            //reapply event handlers to popup mask
+            bindButtonClick();
         }
     });
 
@@ -49,7 +56,7 @@ window.onload = function () {
 
         $.ajax({
             url: 'service.php',
-            data: {action: 'addWhooples', whoopleName: whoopleName, accountName: accountName, whoopleLink: whoopleLink},
+            data: {action: 'addWhoople', whoopleName: whoopleName, accountName: accountName, whoopleLink: whoopleLink},
             type: 'post',
             success: function (output) {
                 var data = $.parseJSON(output);

@@ -1,5 +1,5 @@
 $(function () {
-
+    //FÜR LOGIN FENSTER
     $(".input input").focus(function () {
         $(this).parent(".input").each(function () {
             $("label", this).css({
@@ -113,6 +113,7 @@ $(function () {
     });
 
 
+    //LOGIN BUTTON CLICK -> LOGIN
     $("#loginButton").click(function () {
         var username = $("#loginusername").val();
         var password = $("#loginpassword").val();
@@ -159,6 +160,7 @@ $(function () {
         });
     });
 
+    //REGISTER BUTTON CLICK -> REGISTER
     $("#registerButton").click(function () {
         var username = $("#username").val();
         var email = $("#mail").val();
@@ -260,3 +262,39 @@ $(function () {
         });
     });
 });
+
+function bindButtonClick(){
+    //FÜR ADD WHOOPLE BUTTON
+    //Variables
+    var overlay = $("#overlay"),
+        fab = $(".fab"),
+        cancel = $("#cancel"),
+        submit = $("#submit");
+
+    //fab click
+    fab.on('click', openFAB);
+    overlay.on('click', closeFAB);
+    cancel.on('click', closeFAB);
+
+    function openFAB(event) {
+        if (event) event.preventDefault();
+        fab.addClass('active');
+        overlay.addClass('dark-overlay');
+    }
+
+    function closeFAB(event) {
+        if (event) {
+            event.preventDefault();
+            event.stopImmediatePropagation();
+        }
+
+        fab.removeClass('active');
+        overlay.removeClass('dark-overlay');
+
+    }
+    // When the user clicks on div, open the popup
+    $(".popup").click(function(){
+        var popup = document.getElementById("myPopup");
+        popup.classList.toggle("show");
+    });
+}

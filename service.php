@@ -22,10 +22,18 @@ if (isset($_POST['action']) && !empty($_POST['action'])) {
         case 'getWhooples' :
             getWhooples($_SESSION['username']);
             break;
-        case 'addWhooples' :
-            addWhooples($_SESSION['username'], $_POST['whoopleName'], $_POST['accountName'], $_POST['whoopleLink']);
+        case 'getAvailableWhooples' :
+            getAvailableWhooples();
             break;
-        // ...etc...
+        case 'addWhoople' :
+            addWhoople($_SESSION['username'], $_POST['whoopleName'], $_POST['accountName'], $_POST['whoopleLink']);
+            break;
+        case 'getFriends' :
+            getFriends($_SESSION['username']);
+            break;
+        case 'getFriendRequests' :
+            getFriendRequests($_SESSION['username']);
+            break;
     }
 }
 
@@ -200,12 +208,12 @@ function getWhooples($username)
     echo json_encode($rows);
 }
 
-function getAvaiableWhooples()
+function getAvailableWhooples()
 {
     //TODO CONNECTION aus database.php holen
     $connection = mysqli_connect("localhost", "root", "", "whoople");
 
-    $query = "SELECT wAvailable_Whoople.wAvailable_Whoople_Name, wAvailable_Whoople.wAvailable_Whoople_Website FROM wAvailable_Whoople";
+    $query = "SELECT * FROM wAvailable_Whooples";
     $result = mysqli_query($connection, $query);
     $rows = array();
     while($r = mysqli_fetch_assoc($result)) {
@@ -214,7 +222,7 @@ function getAvaiableWhooples()
     echo json_encode($rows);
 }
 
-function addWhooples($username, $whoopleName, $accountName, $whoopleLink)
+function addWhoople($username, $whoopleName, $accountName, $whoopleLink)
 {
     $connection = mysqli_connect("localhost", "root", "", "whoople");
     $response = array();
@@ -243,4 +251,41 @@ function addWhooples($username, $whoopleName, $accountName, $whoopleLink)
 
     echo json_encode($response);
 }
+
+function getFriends($username)
+{
+    //TODO CONNECTION aus database.php holen
+    $connection = mysqli_connect("localhost", "root", "", "whoople");
+
+    $query = "SELECT wuser.wuser_id from wuser where wuser.wuser_username = '$username';";
+    $result = mysqli_query($connection, $query);
+    $userid = mysqli_fetch_row($result)[0];
+
+    $query = "SELECT wuser.wUser_Username from wuser, wfriend where wfriend.wUser_ID2 = wuser.wUser_ID AND wFriend.wUser_ID1 = '$userid';";
+    $result = mysqli_query($connection, $query);
+    $rows = array();
+    while($r = mysqli_fetch_assoc($result)) {
+        $rows[] = $r;
+    }
+    echo json_encode($rows);
+}
+
+function getFriendRequests($username)
+{
+    //TODO CONNECTION aus database.php holen
+    $connection = mysqli_connect("localhost", "root", "", "whoople");
+
+    $query = "SELECT wuser.wuser_id from wuser where wuser.wuser_username = '$username';";
+    $result = mysqli_query($connection, $query);
+    $userid = mysqli_fetch_row($result)[0];
+
+    $query = "SELECT wuser.wUser_Username from wuser, wfriendrequest where wfriendrequest.wUser_IDSender = wuser.wUser_ID AND wfriendrequest.wUser_IDReciever = '$userid';";
+    $result = mysqli_query($connection, $query);
+    $rows = array();
+    while($r = mysqli_fetch_assoc($result)) {
+        $rows[] = $r;
+    }
+    echo json_encode($rows);
+}
+
 ?>
