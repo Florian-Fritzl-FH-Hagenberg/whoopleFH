@@ -42,6 +42,49 @@ require("database.php");
 </head>
 <body>
 
+
+
+<div class="fab">
+    <i class="material-icons fab-icon">add</i>
+
+    <form class='cntt-wrapper'>
+        <div id="fab-hdr">
+            <h3>Add Whoople</h3>
+        </div>
+
+        <div class="cntt">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" id="text1" />
+                <label class="mdl-textfield__label" for="text2">Whoople-Name</label>
+            </div>
+
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" id="text2" />
+                <label class="mdl-textfield__label" for="text2">Account-name</label>
+            </div>
+
+            <div class="mdl-textfield mdl-js-textfield getmdl-select">
+                <input type="text" value="" class="mdl-textfield__input" id="sample1" readonly>
+                <input type="hidden" value="" name="sample1">
+                <label for="sample1" class="mdl-textfield__label">Avalible Whooples</label>
+                <ul for="sample1" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                    <li class="mdl-menu__item" data-val="FB">Facebook</li>
+                    <li class="mdl-menu__item" data-val="TW">Twitter</li>
+                    <li class="mdl-menu__item" data-val="GP">Google Plus</li>
+                    <li class="mdl-menu__item" data-val="IG">Instagram</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="btn-wrapper">
+            <button class="mdl-button mdl-js-button" id="cancel">Cancel</button>
+            <button class="mdl-button mdl-js-button mdl-button--primary" id="submit">Submit</button>
+        </div>
+
+    </form>
+</div>
+
 <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
     <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
         <div class="mdl-layout__header-row">
@@ -90,6 +133,7 @@ require("database.php");
     </div>
 
     <main class="mdl-layout__content mdl-color--grey-100">
+
         <div class="mdl-grid demo-content">
             <!-- Social Media already added header-->
             <div class="mdl-cell mdl-cell--8-col">
