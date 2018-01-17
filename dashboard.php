@@ -42,7 +42,7 @@ require("database.php");
 </head>
 <body>
 
-
+<div id="overlay"></div>
 
 <div class="fab">
     <i class="material-icons fab-icon">add</i>
@@ -53,26 +53,28 @@ require("database.php");
         </div>
 
         <div class="cntt">
+
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
+                <select>
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="opel">Opel</option>
+                    <option value="audi">Audi</option>
+                </select>
+            </div>
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                 <input class="mdl-textfield__input" type="text" id="text1" />
                 <label class="mdl-textfield__label" for="text2">Whoople-Name</label>
             </div>
 
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="text" id="text2" />
-                <label class="mdl-textfield__label" for="text2">Account-name</label>
+                <input class="mdl-textfield__input" type="text" id="text1" />
+                <label class="mdl-textfield__label" for="text2">Website-Link</label>
             </div>
 
-            <div class="mdl-textfield mdl-js-textfield getmdl-select">
-                <input type="text" value="" class="mdl-textfield__input" id="sample1" readonly>
-                <input type="hidden" value="" name="sample1">
-                <label for="sample1" class="mdl-textfield__label">Avalible Whooples</label>
-                <ul for="sample1" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-                    <li class="mdl-menu__item" data-val="FB">Facebook</li>
-                    <li class="mdl-menu__item" data-val="TW">Twitter</li>
-                    <li class="mdl-menu__item" data-val="GP">Google Plus</li>
-                    <li class="mdl-menu__item" data-val="IG">Instagram</li>
-                </ul>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" id="text2" />
+                <label class="mdl-textfield__label" for="text2">Account-name</label>
             </div>
 
         </div>
@@ -142,14 +144,6 @@ require("database.php");
 
             <!-- Social Media already added content-->
             <ul class="demo-list-control mdl-list" id="socialMediaAdded"></ul>
-
-            <!-- Social Media available added header-->
-            <div class="mdl-cell mdl-cell--8-col">
-                <a>Available Social Websites</a>
-            </div>
-
-            <!-- Social Media available added content-->
-            <ul class="demo-list-control mdl-list" id="socialMediaAvailable"></ul>
         </div>
     </main>
 </div>
