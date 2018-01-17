@@ -35,7 +35,9 @@ require("database.php");
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.cyan-light_blue.min.css">
     <link rel="stylesheet" href="styles.css">
 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script src="typeahead.min.js"></script>
     <script src="jquery-3.2.1.js"></script>
     <script src="script_dashboard.js"></script>
     <script src="script.js"></script>
@@ -53,8 +55,8 @@ require("database.php");
                     <i class="material-icons">search</i>
                 </label>
                 <div class="mdl-textfield__expandable-holder">
-                    <input class="mdl-textfield__input" type="text" id="search">
-                    <label class="mdl-textfield__label" for="search">Enter your query...</label>
+                    <input class="mdl-textfield__input" type="text" name="typeahead" id="search" placeholder="Search for users...">
+                    <label class="mdl-textfield__label" for="search"></label>
                 </div>
             </div>
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
