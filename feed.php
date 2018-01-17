@@ -37,55 +37,10 @@ require("database.php");
 
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <script src="jquery-3.2.1.js"></script>
-    <script src="script_dashboard.js"></script>
+    <script src="script_friends.js"></script>
     <script src="script.js"></script>
 </head>
 <body>
-
-<div id="overlay"></div>
-
-<div class="fab">
-    <i class="material-icons fab-icon">add</i>
-
-    <form class='cntt-wrapper'>
-        <div id="fab-hdr">
-            <h3>Add Whoople</h3>
-        </div>
-
-        <div class="cntt">
-
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
-                <select>
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="opel">Opel</option>
-                    <option value="audi">Audi</option>
-                </select>
-            </div>
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="text" id="text1" />
-                <label class="mdl-textfield__label" for="text2">Whoople-Name</label>
-            </div>
-
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="text" id="text1" />
-                <label class="mdl-textfield__label" for="text2">Website-Link</label>
-            </div>
-
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="text" id="text2" />
-                <label class="mdl-textfield__label" for="text2">Account-name</label>
-            </div>
-
-        </div>
-
-        <div class="btn-wrapper">
-            <button class="mdl-button mdl-js-button" id="cancel">Cancel</button>
-            <button class="mdl-button mdl-js-button mdl-button--primary" id="submit">Submit</button>
-        </div>
-
-    </form>
-</div>
 
 <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
     <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
@@ -124,9 +79,9 @@ require("database.php");
                                                                 role="presentation">home</i>Home</a>
             <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons"
                                                        role="presentation">inbox</i>Inbox</a>
-            <a class="mdl-navigation__link" href="friends.php"><i class="mdl-color-text--blue-grey-400 material-icons"
+            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons"
                                                        role="presentation">sentiment_very_satisfied</i>Friends</a>
-            <a class="mdl-navigation__link" href="feed.php"><i class="mdl-color-text--blue-grey-400 material-icons"
+            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons"
                                                        role="presentation">forum</i>Newsfeed</a>
             <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons"
                                                        role="presentation">people</i>Gruppen</a>
@@ -135,15 +90,24 @@ require("database.php");
     </div>
 
     <main class="mdl-layout__content mdl-color--grey-100">
-
         <div class="mdl-grid demo-content">
-            <!-- Social Media already added header-->
+
+            <!-- Friend Requests header -->
             <div class="mdl-cell mdl-cell--8-col">
-                <a>Already added Social Websites</a>
+                <a>Friend Requests</a>
             </div>
 
-            <!-- Social Media already added content-->
-            <ul class="demo-list-control mdl-list" id="socialMediaAdded"></ul>
+            <!-- Friend Requests content -->
+            <ul class="demo-list-control mdl-list" id="friendRequests"></ul>
+
+            <!-- Friends header -->
+            <div class="mdl-cell mdl-cell--8-col">
+                <a>Friends</a>
+            </div>
+
+            <!-- Friends content -->
+            <ul class="demo-list-control mdl-list" id="friends"></ul>
+
         </div>
     </main>
 </div>

@@ -11,7 +11,8 @@ window.onload = function () {
                 var text = "";
                 text+='<li class="mdl-list__item"> <span class="mdl-list__item-primary-content"> <i class="material-icons  mdl-list__item-avatar">person</i>';
                 text+=data[i]['wUser_Username'];
-                text+='</span></li>';
+                text+='</span>';
+                text+='<i class="material-icons  mdl-list__item-avatar">remove</i></li>';
                 parent.append(text);
             }
         }
@@ -29,7 +30,8 @@ window.onload = function () {
                 var text = "";
                 text+='<li class="mdl-list__item"> <span class="mdl-list__item-primary-content"> <i class="material-icons  mdl-list__item-avatar">person</i>';
                 text+=data[i]['wUser_Username'];
-                text+='</span></li>';
+                text+= '</span><i class="material-icons  mdl-list__item-avatar">add</i> &nbsp;';
+                text+= '<i class="material-icons  mdl-list__item-avatar">remove</i></li>';
                 parent.append(text);
             }
         }

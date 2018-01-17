@@ -79,9 +79,9 @@ require("database.php");
                                                                 role="presentation">home</i>Home</a>
             <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons"
                                                        role="presentation">inbox</i>Inbox</a>
-            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons"
+            <a class="mdl-navigation__link" href="friends.php"><i class="mdl-color-text--blue-grey-400 material-icons"
                                                        role="presentation">sentiment_very_satisfied</i>Friends</a>
-            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons"
+            <a class="mdl-navigation__link" href="feed.php"><i class="mdl-color-text--blue-grey-400 material-icons"
                                                        role="presentation">forum</i>Newsfeed</a>
             <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons"
                                                        role="presentation">people</i>Gruppen</a>
@@ -107,6 +107,7 @@ require("database.php");
 
             <!-- Friends content -->
             <ul class="demo-list-control mdl-list" id="friends"></ul>
+
         </div>
     </main>
 </div>
