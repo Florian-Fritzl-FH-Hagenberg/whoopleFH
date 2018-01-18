@@ -100,10 +100,8 @@ require("database.php");
                 <label class="mdl-button mdl-js-button mdl-button--icon" for="search" id="searchButton">
                     <i class="material-icons">search</i>
                 </label>
-                <div class="mdl-textfield__expandable-holder">
-                    <input type="text" name="typeahead" class="mdl-textfield__input typeahead tt-query" autocomplete="off" spellcheck="false" placeholder="Search for users...">
-                    <label class="mdl-textfield__label" for="search"></label>
-                </div>
+                <input type="text" name="typeahead" class="mdl-textfield__input typeahead" autocomplete="off" spellcheck="false" placeholder="Search for users...">
+                <label class="mdl-textfield__label" for="search"></label>
             </div>
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
                 <i class="material-icons">more_vert</i>
