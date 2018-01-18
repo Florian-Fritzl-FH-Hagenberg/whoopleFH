@@ -1315,8 +1315,58 @@ html {
     padding: 100px;
 }
 */
+<<<<<<< HEAD
 .card {
     width:300px;
     margin-bottom: 0.5em;
 }
+=======
+
+/* SUCHFELD */
+
+.bs-example{
+    font-family: sans-serif;
+    position: relative;
+    margin: 50px;
+}
+.typeahead, .tt-query, .tt-hint {
+    border: 2px solid #CCCCCC;
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+    outline: medium none;
+    padding: 12px;
+    width: 200px;
+}
+.typeahead {
+    background-color: #FFFFFF;
+}
+
+.tt-query {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+}
+.tt-hint {
+    color: #999999;
+}
+.tt-dropdown-menu {
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    padding: 8px 0;
+    width: 200px;
+}
+.tt-suggestion {
+    font-size: 14px;
+    line-height: 18px;
+    padding: 3px 12px;
+}
+.tt-suggestion.tt-is-under-cursor {
+    background-color: #0097CF;
+    color: #FFFFFF;
+}
+.tt-suggestion p {
+    margin: 0;
+}
+
+>>>>>>> bad6319633bd7ab7226529d5f2e5c4a1f6fde444
 
