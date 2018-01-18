@@ -33,6 +33,11 @@ require("database.php");
           href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.cyan-light_blue.min.css">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <link rel="stylesheet" href="styles.css">
 
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
@@ -92,21 +97,164 @@ require("database.php");
     <main class="mdl-layout__content mdl-color--grey-100">
         <div class="mdl-grid demo-content">
 
-            <!-- Friend Requests header -->
-            <div class="mdl-cell mdl-cell--8-col">
-                <a>Friend Requests</a>
+            <!--div class="card card-1"></div>
+            <div class="card card-1"></div>
+            <div class="card card-1"></div>
+            <div class="card card-1"></div>
+            <div class="card card-1"></div>
+            <div class="card card-1"></div>
+
+            <div class="card small">
+
+            </div-->
+
+
+            <div class="row">
+                <div class="col s12 m7">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="images/sample-1.jpg">
+                            <span class="card-title">Card Title</span>
+                        </div>
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.
+                                I am convenient because I require little markup to use effectively.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <!-- Friend Requests content -->
-            <ul class="demo-list-control mdl-list" id="friendRequests"></ul>
-
-            <!-- Friends header -->
-            <div class="mdl-cell mdl-cell--8-col">
-                <a>Friends</a>
+            <div class="row">
+                <div class="col s12 m7">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="images/sample-1.jpg">
+                            <span class="card-title">Card Title</span>
+                        </div>
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.
+                                I am convenient because I require little markup to use effectively.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <!-- Friends content -->
-            <ul class="demo-list-control mdl-list" id="friends"></ul>
+            <div class="row">
+                <div class="col s12 m7">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="images/sample-1.jpg">
+                            <span class="card-title">Card Title</span>
+                        </div>
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.
+                                I am convenient because I require little markup to use effectively.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col s12 m7">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="images/sample-1.jpg">
+                            <span class="card-title">Card Title</span>
+                        </div>
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.
+                                I am convenient because I require little markup to use effectively.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col s12 m7">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="images/sample-1.jpg">
+                            <span class="card-title">Card Title</span>
+                        </div>
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.
+                                I am convenient because I require little markup to use effectively.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col s12 m7">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="images/sample-1.jpg">
+                            <span class="card-title">Card Title</span>
+                        </div>
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.
+                                I am convenient because I require little markup to use effectively.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col s12 m7">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="images/sample-1.jpg">
+                            <span class="card-title">Card Title</span>
+                        </div>
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.
+                                I am convenient because I require little markup to use effectively.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col s12 m7">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="images/sample-1.jpg">
+                            <span class="card-title">Card Title</span>
+                        </div>
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.
+                                I am convenient because I require little markup to use effectively.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
 
         </div>
     </main>

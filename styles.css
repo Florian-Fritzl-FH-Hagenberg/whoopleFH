@@ -1315,5 +1315,8 @@ html {
     padding: 100px;
 }
 */
-
+.card {
+    width:300px;
+    margin-bottom: 0.5em;
+}
 
