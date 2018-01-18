@@ -1245,7 +1245,7 @@ html {
     background: #FFF;
     border-radius: .125em;
     width: 450px;
-    height: 350px;
+    height: 400px;
     box-shadow: 0 25px 35px 0 rgba(0, 0, 0, 0.35);
     top: 10%;
     right: calc(50% - 250px);
@@ -1278,6 +1278,7 @@ html {
 
 .cntt-wrapper {
     display: none;
+    height: 400px !important;
 }
 
 .active .cntt-wrapper {

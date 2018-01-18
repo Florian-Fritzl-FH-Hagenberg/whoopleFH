@@ -6,7 +6,7 @@ require("database.php");
 ?>
 
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -58,26 +58,22 @@ require("database.php");
         <div class="cntt">
 
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
-                <select>
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="opel">Opel</option>
-                    <option value="audi">Audi</option>
-                </select>
             </div>
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="text" id="text1" />
-                <label class="mdl-textfield__label" for="text2">Whoople-Name</label>
+                <label class="mdl-textfield__label" for="whoopleName">Whoople-Name</label>
+                <input class="mdl-textfield__input" type="text" list="socialMediaAvailable" id="whoopleName">
+                <datalist id="socialMediaAvailable">
+                </datalist>
             </div>
 
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="text" id="text1" />
-                <label class="mdl-textfield__label" for="text2">Website-Link</label>
+                <label class="mdl-textfield__label" for="websiteLink">Website-Link</label>
+                <input class="mdl-textfield__input" type="text" id="websiteLink" />
             </div>
 
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="text" id="text2" />
-                <label class="mdl-textfield__label" for="text2">Account-name</label>
+                <label class="mdl-textfield__label" for="accountName">Account-Name</label>
+                <input class="mdl-textfield__input" type="text" id="accountName" />
             </div>
 
         </div>
