@@ -26,7 +26,7 @@ if (isset($_POST['action']) && !empty($_POST['action'])) {
             getAvailableWhooples();
             break;
         case 'addWhoople' :
-            addWhoople($_SESSION['username'], $_POST['whoopleName'], $_POST['accountName'], $_POST['whoopleLink']);
+            addWhoople($_SESSION['username'], $_POST['whoopleName'], $_POST['accountName'], $_POST['websiteLink']);
             break;
         case 'getFriends' :
             getFriends($_SESSION['username']);
@@ -222,7 +222,7 @@ function getAvailableWhooples()
     echo json_encode($rows);
 }
 
-function addWhoople($username, $whoopleName, $accountName, $whoopleLink)
+function addWhoople($username, $whoopleName, $accountName, $websiteLink)
 {
     $connection = mysqli_connect("localhost", "root", "", "whoople");
     $response = array();
@@ -238,14 +238,19 @@ function addWhoople($username, $whoopleName, $accountName, $whoopleLink)
         $valid = false;
     }
 
-    if(empty($whoopleLink)) {
-        $response['whoopleLinkError'] = 'empty';
+    if(empty($websiteLink)) {
+        $response['websiteLinkError'] = 'empty';
         $valid = false;
     }
 
     if($valid == true) {
         $response['valid'] = 'success';
-        $query = "INSERT INTO `wwhoople` (`wWhoople_ID`, `wUser_ID`, `wWhoople_Website`, `wWhoople_AccountName`) VALUES (NULL, '$username', '$whoopleLink', '$whoopleName');";
+
+        $query = "SELECT wuser.wuser_id from wuser where wuser.wuser_username = '$username';";
+        $result = mysqli_query($connection, $query);
+        $userid = mysqli_fetch_row($result)[0];
+
+        $query = "INSERT INTO `wwhoople` (`wWhoople_ID`, `wUser_ID`, `wWhoople_Website`, `wWhoople_AccountName`, `wWhoople_Token`) VALUES (NULL, '$userid', '$whoopleName', '$accountName', '$websiteLink');";
         mysqli_query($connection, $query);
     }
 
