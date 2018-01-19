@@ -1316,12 +1316,18 @@ html {
     padding: 100px;
 }
 */
+<<<<<<< HEAD
 
+=======
+>>>>>>> de6c6c780116cbc0ea890104ff1691f39900dbea
 .card {
     width:300px;
     margin-bottom: 0.5em;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> de6c6c780116cbc0ea890104ff1691f39900dbea
 
 /* SUCHFELD */
 
@@ -1368,5 +1374,12 @@ html {
 .tt-suggestion p {
     margin: 0;
 }
+<<<<<<< HEAD
 
 
+=======
+.card {
+    width:300px;
+    margin-bottom: 0.5em;
+}
+>>>>>>> de6c6c780116cbc0ea890104ff1691f39900dbea

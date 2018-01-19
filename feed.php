@@ -84,10 +84,10 @@ require("database.php");
                                                                 role="presentation">home</i>Home</a>
             <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons"
                                                        role="presentation">inbox</i>Inbox</a>
-            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons"
-                                                       role="presentation">sentiment_very_satisfied</i>Friends</a>
-            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons"
-                                                       role="presentation">forum</i>Newsfeed</a>
+            <a class="mdl-navigation__link" href="friends.php"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                                  role="presentation">sentiment_very_satisfied</i>Friends</a>
+            <a class="mdl-navigation__link" href="feed.php"><i class="mdl-color-text--blue-grey-400 material-icons"
+                                                               role="presentation">forum</i>Newsfeed</a>
             <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons"
                                                        role="presentation">people</i>Gruppen</a>
             <div class="mdl-layout-spacer"></div>
@@ -216,46 +216,6 @@ require("database.php");
                     </div>
                 </div>
             </div>
-
-            <div class="row">
-                <div class="col s12 m7">
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="images/sample-1.jpg">
-                            <span class="card-title">Card Title</span>
-                        </div>
-                        <div class="card-content">
-                            <p>I am a very simple card. I am good at containing small bits of information.
-                                I am convenient because I require little markup to use effectively.</p>
-                        </div>
-                        <div class="card-action">
-                            <a href="#">This is a link</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col s12 m7">
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="images/sample-1.jpg">
-                            <span class="card-title">Card Title</span>
-                        </div>
-                        <div class="card-content">
-                            <p>I am a very simple card. I am good at containing small bits of information.
-                                I am convenient because I require little markup to use effectively.</p>
-                        </div>
-                        <div class="card-action">
-                            <a href="#">This is a link</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-
         </div>
     </main>
 </div>
