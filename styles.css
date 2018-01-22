@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
+
 /**
  * Copyright 2015 Google Inc. All Rights Reserved.
  *
@@ -16,18 +17,16 @@
  */
 
 /*Changes*/
-a{
+a {
     color: #64ffda;
 }
-
-
 
 body {
     margin: 0;
 }
 
 /* Disable ugly boxes around images in IE10 */
-a img{
+a img {
     border: 0px;
 }
 
@@ -50,7 +49,6 @@ a img{
     margin: 0 !important;
 }
 
-
 .mdl-textfield--expandable {
     width: auto;
 }
@@ -68,12 +66,10 @@ a img{
     display: none !important;
 }
 
-
 .android-logo-image {
     height: 28px;
     width: 140px;
 }
-
 
 .android-header {
     overflow: visible;
@@ -120,7 +116,6 @@ a img{
     width: 100px;
 }
 
-
 .android-navigation .mdl-navigation__link {
     display: inline-block;
     height: 60px;
@@ -146,7 +141,6 @@ a img{
     -ms-flex-order: 3;
     order: 3;
 }
-
 
 .android-drawer {
     border-right: none;
@@ -253,7 +247,6 @@ a img{
     z-index: 1;
 }
 
-
 .android-phone {
     display: inline-block;
     width: 64px;
@@ -264,7 +257,6 @@ a img{
     width: 100%;
     z-index: 1;
 }
-
 
 .android-tablet {
     display: inline-block;
@@ -282,7 +274,6 @@ a img{
     z-index: 2;
 }
 
-
 .android-tv {
     display: inline-block;
     width: 300px;
@@ -293,7 +284,6 @@ a img{
     width: 100%;
     z-index: 1;
 }
-
 
 .android-auto {
     display: inline-block;
@@ -306,7 +296,6 @@ a img{
     height: 300px;
     z-index: 1;
 }
-
 
 .android-wear-section {
     position: relative;
@@ -466,11 +455,9 @@ a img{
     top: 6px;
 }
 
-
 .android-link-menu:hover {
     cursor: pointer;
 }
-
 
 /**** Mobile layout ****/
 @media (max-width: 900px) {
@@ -549,29 +536,34 @@ a img{
     }
 }
 
-
 /*Dashboard*/
 .demo-avatar {
     width: 48px;
     height: 48px;
     border-radius: 24px;
 }
+
 .demo-layout .mdl-layout__header .mdl-layout__drawer-button {
     color: rgba(0, 0, 0, 0.54);
 }
+
 .mdl-layout__drawer .avatar {
     margin-bottom: 16px;
 }
+
 .demo-drawer {
     border: none;
 }
+
 /* iOS Safari specific workaround */
 .demo-drawer .mdl-menu__container {
     z-index: -1;
 }
+
 .demo-drawer .demo-navigation {
     z-index: -2;
 }
+
 /* END iOS Safari specific workaround */
 .demo-drawer .mdl-menu .mdl-menu__item {
     display: -webkit-flex;
@@ -581,6 +573,7 @@ a img{
     -ms-flex-align: center;
     align-items: center;
 }
+
 .demo-drawer-header {
     box-sizing: border-box;
     display: -webkit-flex;
@@ -595,6 +588,7 @@ a img{
     padding: 16px;
     height: 151px;
 }
+
 .demo-avatar-dropdown {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -614,6 +608,7 @@ a img{
     -ms-flex-positive: 1;
     flex-grow: 1;
 }
+
 .demo-layout .demo-navigation .mdl-navigation__link {
     display: -webkit-flex !important;
     display: -ms-flexbox !important;
@@ -627,10 +622,12 @@ a img{
     color: rgba(255, 255, 255, 0.56);
     font-weight: 500;
 }
+
 .demo-layout .demo-navigation .mdl-navigation__link:hover {
     background-color: #00BCD4;
     color: #37474F;
 }
+
 .demo-navigation .mdl-navigation__link .material-icons {
     font-size: 24px;
     color: rgba(255, 255, 255, 0.56);
@@ -641,14 +638,14 @@ a img{
     max-width: 1080px;
 }
 
-.demo-list-control{
+.demo-list-control {
     padding: 16px 16px;
     margin: 0px 8px 0px 8px;
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
     width: 100%;
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
     background: #FFF !important;
 }
 
@@ -664,6 +661,7 @@ a img{
     -ms-flex-align: stretch;
     align-items: stretch;
 }
+
 /* TODO: Find a proper solution to have the graphs
  * not float around outside their container in IE10/11.
  * Using a browserhacks.com solution for now.
@@ -671,13 +669,16 @@ a img{
 :-ms-input-placeholder, :root .demo-graphs {
     min-height: 664px;
 }
+
 :-ms-input-placeholder, :root .demo-graph {
     max-height: 300px;
 }
+
 /* TODO end */
 .demo-graph:nth-child(1) {
     color: #00b9d8;
 }
+
 .demo-graph:nth-child(2) {
     color: #d9006e;
 }
@@ -690,25 +691,31 @@ a img{
     -ms-flex-line-pack: start;
     align-content: flex-start;
 }
+
 .demo-cards .demo-separator {
     height: 32px;
 }
+
 .demo-cards .mdl-card__title.mdl-card__title {
     color: white;
     font-size: 24px;
     font-weight: 400;
 }
+
 .demo-cards ul {
     padding: 0;
 }
+
 .demo-cards h3 {
     font-size: 1em;
 }
+
 .demo-updates .mdl-card__title {
     min-height: 200px;
     background-position: 90% 100%;
     background-repeat: no-repeat;
 }
+
 .demo-cards .mdl-card__actions a {
     color: #00BCD4;
     text-decoration: none;
@@ -717,19 +724,24 @@ a img{
 .demo-options h3 {
     margin: 0;
 }
+
 .demo-options .mdl-checkbox__box-outline {
     border-color: rgba(255, 255, 255, 0.89);
 }
+
 .demo-options ul {
     margin: 0;
     list-style-type: none;
 }
+
 .demo-options li {
     margin: 4px 0;
 }
+
 .demo-options .material-icons {
     color: rgba(255, 255, 255, 0.89);
 }
+
 .demo-options .mdl-card__actions {
     height: 64px;
     display: -webkit-flex;
@@ -1053,7 +1065,7 @@ a img{
     border-radius: 50%;
     background: #64ffda;
     position: absolute;
-    top: 40px;
+    /*top: 40px;*/
     right: -70px;
     cursor: pointer;
     z-index: 100;
@@ -1106,21 +1118,8 @@ a img{
     -ms-transform: translate(50%, -50%) rotate(0deg);
 }
 
-/*
-body {
-    background-color: burlywood;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    font-family: 'Roboto', sans-serif;
-}
 
-body,
-html {
-    overflow: hidden;
-}
-*/
+
 
 .materialContainer {
     width: 100%;
@@ -1132,7 +1131,11 @@ html {
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
 }
+.errorMsg {
+    color: red;
+}
 
+/*
 *,
 *:after,
 *::before {
@@ -1144,11 +1147,6 @@ html {
     text-decoration: none;
     list-style-type: none;
     outline: none;
-}
-
-
-.errorMsg{
-    color: red;
 }
 
 /*
@@ -1202,13 +1200,21 @@ html {
 
 /* Add animation (fade in the popup) */
 @-webkit-keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity:1 ;}
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /* Popup button*/
@@ -1308,34 +1314,14 @@ html {
     padding: 6px 16px;
 }
 
-/* just presenation */
-/*.center{margin: 0 auto}
-.m-t-100{margin-top:100px}
-.box {
-    height: 300px;
-    padding: 100px;
-}
-*/
-<<<<<<< HEAD
-
-=======
->>>>>>> de6c6c780116cbc0ea890104ff1691f39900dbea
-.card {
-    width:300px;
-    margin-bottom: 0.5em;
-}
-<<<<<<< HEAD
-
-=======
->>>>>>> de6c6c780116cbc0ea890104ff1691f39900dbea
-
 /* SUCHFELD */
 
-.bs-example{
+.bs-example {
     font-family: sans-serif;
     position: relative;
     margin: 50px;
 }
+
 .typeahead, .tt-query, .tt-hint {
     border: 2px solid #CCCCCC;
     font-size: 14px;
@@ -1345,6 +1331,7 @@ html {
     padding: 12px;
     width: 200px;
 }
+
 .typeahead {
     background-color: #FFFFFF;
 }
@@ -1352,9 +1339,11 @@ html {
 .tt-query {
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
 }
+
 .tt-hint {
     color: #999999;
 }
+
 .tt-dropdown-menu {
     background-color: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.2);
@@ -1362,24 +1351,48 @@ html {
     padding: 8px 0;
     width: 200px;
 }
+
 .tt-suggestion {
     font-size: 14px;
     line-height: 18px;
     padding: 3px 12px;
 }
+
 .tt-suggestion.tt-is-under-cursor {
     background-color: #0097CF;
     color: #FFFFFF;
 }
+
 .tt-suggestion p {
     margin: 0;
 }
-<<<<<<< HEAD
 
-
-=======
-.card {
-    width:300px;
-    margin-bottom: 0.5em;
+.mdl-card__title {
+    min-height: 200px;
+    min-height: 200px;
+    background-image: url(images/sample-1.jpg);
+    background-position: 90% 100%;
+    background-repeat: no-repeat;
+    background-size:cover
 }
->>>>>>> de6c6c780116cbc0ea890104ff1691f39900dbea
+.mdl-card__title-text{
+    color: #FFFFFF;
+}
+
+
+.acme-card {
+    width: 300px;
+    height: 300px;
+    background: url('https://tfirdaus.github.io/mdl/images/laptop.jpg') center / cover;
+}
+.acme-card-file {
+    padding: 1em;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.mdl-button--fab.mdl-button--colored{
+    background: lightgray;
+}
+
+
