@@ -93,7 +93,13 @@ require("database.php");
             </div>
 
             <!-- Friend Requests content -->
-            <ul class="demo-list-control mdl-list" id="friendRequests"></ul>
+            <ul class="demo-list-control mdl-list" id="friendRequests">
+                <li class="mdl-list__item"> <span class="mdl-list__item-primary-content"> <i class="material-icons  mdl-list__item-avatar">person</i>Max Mustermann</span><a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">Accept</a><a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">Decline</a></li>
+                <li class="mdl-list__item"> <span class="mdl-list__item-primary-content"> <i class="material-icons  mdl-list__item-avatar">person</i>Michael Baumann</span><a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">Accept</a><a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">Decline</a></li>
+                <li class="mdl-list__item"> <span class="mdl-list__item-primary-content"> <i class="material-icons  mdl-list__item-avatar">person</i>Susi Sanddorn</span><a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">Accept</a><a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">Decline</a></li>
+                <li class="mdl-list__item"> <span class="mdl-list__item-primary-content"> <i class="material-icons  mdl-list__item-avatar">person</i>Ferdinand Hauser</span><a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">Accept</a><a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">Decline</a></li>
+
+            </ul>
 
             <!-- Friends header -->
             <div class="mdl-cell mdl-cell--8-col">
@@ -101,7 +107,10 @@ require("database.php");
             </div>
 
             <!-- Friends content -->
-            <ul class="demo-list-control mdl-list" id="friends"></ul>
+            <ul class="demo-list-control mdl-list" id="friends">
+                <li class="mdl-list__item"> <span class="mdl-list__item-primary-content"> <i class="material-icons  mdl-list__item-avatar">person</i></span><a href="profile.php" class="mdl-button mdl-js-button mdl-js-ripple-effect"> Florian Fritzl</a></li>
+            </ul>
+
 
         </div>
     </main>

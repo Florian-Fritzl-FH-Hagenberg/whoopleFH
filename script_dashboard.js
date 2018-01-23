@@ -58,7 +58,7 @@ window.onload = function () {
 
                 if (data['websiteLinkError'] === 'empty') {
                     $("#websiteLinkEmpty").remove();
-                    $('#websiteLink').after('<span id ="websiteLinkEmpty" class="errorMsg">Please enter a Whoople-Link!</span>');
+                    $('#websiteLink').after('<span id ="websiteLinkEmpty" class="errorMsg">Please enter a Website-Link!</span>');
                 } else{
                     $("#websiteLinkEmpty").remove();
                 }

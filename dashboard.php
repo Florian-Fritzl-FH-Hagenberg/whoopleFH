@@ -170,7 +170,7 @@ require("database.php");
                         <div class="mdl-textfield mdl-js-textfield" style="width:unset; display: block">
                             <input class="mdl-textfield__input" type="text" id="sample1" style="font-size: 22px">
                             <label class="mdl-textfield__label" for="sample1" style="font-size: 22px;">What's on your
-                                mind? <?php echo $_SESSION['forename']; ?></label>
+                                mind <?php echo $_SESSION['forename']; ?>?</label>
                         </div>
                     </form>
 

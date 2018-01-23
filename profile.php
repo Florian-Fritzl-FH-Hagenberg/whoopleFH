@@ -207,7 +207,10 @@ require("database.php");
             </div>
 
             <!-- Social Media already added content-->
-            <ul class="demo-list-control mdl-list" id="socialMediaAdded"></ul>
+            <ul class="demo-list-control mdl-list" id="#">
+                <li class="mdl-list__item"> <span class="mdl-list__item-primary-content"> <i class="material-icons  mdl-list__item-avatar">person</i>Facebook</span>Florian Fritzl</a></li>
+                <li class="mdl-list__item"> <span class="mdl-list__item-primary-content"> <i class="material-icons  mdl-list__item-avatar">person</i>Instagram</span>florianfritzl</a></li>
+            </ul>
 
 
     </main>
