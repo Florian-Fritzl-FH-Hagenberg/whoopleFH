@@ -84,8 +84,12 @@ require("database.php");
     </div>
 
     <main class="mdl-layout__content mdl-color--grey-100">
-        <div class="mdl-grid demo-content">
 
+
+        <div class="mdl-grid demo-content">
+            <div class="mdl-cell mdl-cell--12-col">
+                <h3>News Feed</h3>
+            </div>
 
             <div class="mdl-cell mdl-cell--8-col card-lesson mdl-card mdl-shadow--2dp">
                 <div class="mdl-card__title mdl-card--expand mdl-color--teal-300" style="background-position: center; background-image: url(images/s5.jpeg)">
