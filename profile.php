@@ -73,7 +73,7 @@ require("database.php");
         <header class="demo-drawer-header">
             <img src="images/stefan.jpg" class="demo-avatar">
             <div class="demo-avatar-dropdown" style="margin-top: 10px;">
-                <span><?php echo $_SESSION['forename']; ?><?php echo $_SESSION['lastname']; ?></span>
+                <span><?php echo $_SESSION['forename']; ?>&nbsp;<?php echo $_SESSION['lastname']; ?></span>
             </div>
         </header>
         <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
@@ -105,7 +105,8 @@ require("database.php");
                 <div class="mdl-card__supporting-text" style="min-height: 200px; position: relative">
                     <h4>Florian Fritzl</h4>
                     <!--?php echo $_SESSION['description']; ?-->
-                    Hey, i am Florian. I am one of the creative minds behind whoople. Send me a message to get in touch with me! <br><br>
+                    Hey, i am Florian. I am one of the creative minds behind whoople. Send me a message to get in touch
+                    with me! <br><br>
                     I think whoople is the best website to connect with all your friends, join the community today!
                     You can see all my aready added Social Websites in the section bellow or add me as a friend.
                 </div>
@@ -119,7 +120,6 @@ require("database.php");
             <div class="mdl-cell mdl-cell--12-col">
                 <h3>Recent Posts</h3>
             </div>
-
 
 
             <div class="mdl-cell mdl-cell--4-col card-lesson mdl-card mdl-shadow--2dp">
@@ -154,7 +154,8 @@ require("database.php");
                     <h2 class="mdl-card__title-text">Facebook</h2>
                 </div>
                 <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-                    Wunderbarer Abend mit einer tollen Schiffsfahrt auf der MS Stadt Linz und geilem Essen gekrönt vom Donau in Flammen Feuerwerk mit Musik!
+                    Wunderbarer Abend mit einer tollen Schiffsfahrt auf der MS Stadt Linz und geilem Essen gekrönt vom
+                    Donau in Flammen Feuerwerk mit Musik!
                 </div>
                 <div class="mdl-card__actions mdl-card--border">
                     <a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">GO TO PAGE</a>
@@ -167,7 +168,8 @@ require("database.php");
                     <h2 class="mdl-card__title-text">Facebook</h2>
                 </div>
                 <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-                    Today was a chill summer day hanging out with @vicky_langeder @viktorh_ and @_pezii_ ending at the main place in #perg
+                    Today was a chill summer day hanging out with @vicky_langeder @viktorh_ and @_pezii_ ending at the
+                    main place in #perg
                 </div>
                 <div class="mdl-card__actions mdl-card--border">
                     <a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">GO TO PAGE</a>

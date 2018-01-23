@@ -115,7 +115,7 @@ require("database.php");
         <header class="demo-drawer-header">
             <img src="images/stefan.jpg" class="demo-avatar">
             <div class="demo-avatar-dropdown" style="margin-top: 10px;">
-                <span><?php echo $_SESSION['forename']; ?><?php echo $_SESSION['lastname']; ?></span>
+                <span><?php echo $_SESSION['forename']; ?>&nbsp;<?php echo $_SESSION['lastname']; ?></span>
             </div>
         </header>
         <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
@@ -145,7 +145,7 @@ require("database.php");
 
             <div class="mdl-card mdl-cell mdl-cell--8-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
                 <div class="mdl-card__supporting-text" style="min-height: 200px; position: relative">
-                    <h4><?php echo $_SESSION['forename']; ?><?php echo $_SESSION['lastname']; ?></h4>
+                    <h4><?php echo $_SESSION['forename']; ?>&nbsp;<?php echo $_SESSION['lastname']; ?></h4>
                     <!--?php echo $_SESSION['description']; ?-->
                     Hello, my name is Stefan and this is my whoople page. Check out my newest posts and add me if you
                     want
