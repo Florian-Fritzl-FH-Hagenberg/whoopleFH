@@ -53,48 +53,6 @@ require("database.php");
 </head>
 <body>
 
-<div id="overlay"></div>
-
-<div class="fab">
-    <i class="material-icons fab-icon">add</i>
-
-    <form class='cntt-wrapper'>
-        <div id="fab-hdr">
-            <h3>Add Whoople</h3>
-        </div>
-
-        <div class="cntt">
-
-            <div
-                class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height">
-            </div>
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <label class="mdl-textfield__label" for="whoopleName">Whoople-Name</label>
-                <input class="mdl-textfield__input" type="text" list="socialMediaAvailable" id="whoopleName">
-                <datalist id="socialMediaAvailable">
-                </datalist>
-            </div>
-
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <label class="mdl-textfield__label" for="websiteLink">Website-Link</label>
-                <input class="mdl-textfield__input" type="text" id="websiteLink"/>
-            </div>
-
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <label class="mdl-textfield__label" for="accountName">Account-Name</label>
-                <input class="mdl-textfield__input" type="text" id="accountName"/>
-            </div>
-
-        </div>
-
-        <div class="btn-wrapper">
-            <button class="mdl-button mdl-js-button" id="cancel">Cancel</button>
-            <button class="mdl-button mdl-js-button mdl-button--primary" id="submit">Submit</button>
-        </div>
-
-    </form>
-</div>
-
 <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
     <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
         <div class="mdl-layout__header-row">
@@ -115,12 +73,10 @@ require("database.php");
         <header class="demo-drawer-header">
             <img src="images/stefan.jpg" class="demo-avatar">
             <div class="demo-avatar-dropdown" style="margin-top: 10px;">
-                <span><!--?php echo $_SESSION['username']; ?--> Stefan Peyreder</span>
+                <span><?php echo $_SESSION['forename']; ?><?php echo $_SESSION['lastname']; ?></span>
             </div>
         </header>
         <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
-            <a class="mdl-navigation__link" href="profile.php"><i class="mdl-color-text--blue-grey-400 material-icons"
-                                                                  role="presentation">account_circle</i>Profile</a>
             <a class="mdl-navigation__link" href="index.php"><i class="mdl-color-text--blue-grey-400 material-icons"
                                                                 role="presentation">home</i>Home</a>
             <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons"
@@ -142,82 +98,63 @@ require("database.php");
 
             <div class="mdl-cell mdl-cell--4-col mdl-card mdl-shadow--2dp">
                 <div class="mdl-card__title mdl-card--expand"
-                     style="background-position: center; background-image: url(images/stefan.jpg)"></div>
+                     style="background-position: center; background-image: url(images/flo.jpg)"></div>
             </div>
 
             <div class="mdl-card mdl-cell mdl-cell--8-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
-                <div class="mdl-card__supporting-text"">
-                    <h4><!--?php echo $_SESSION['username']; ?--> Stefan Peyreder</h4>
-                    Hello, my name is Stefan and this is my whoople page. Check out my newest posts and add me if you want to get in touch with me! <br><br>
-                I think whoople is the best website to connect with all your friends, join the community today!
+                <div class="mdl-card__supporting-text" style="min-height: 200px; position: relative">
+                    <h4>Florian Fritzl</h4>
+                    <!--?php echo $_SESSION['description']; ?-->
+                    Hey, i am Florian. I am one of the creative minds behind whoople. Send me a message to get in touch with me! <br><br>
+                    I think whoople is the best website to connect with all your friends, join the community today!
+                    You can see all my aready added Social Websites in the section bellow or add me as a friend.
+                </div>
+                <div class="mdl-card__actions mdl-card--border" style="position: relative; bottom: 0px;">
+                    <a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">Send Message</a>
+                    <a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">Add as Friend</a>
                 </div>
 
-                <div class="mdl-card__supporting-text">
-                    You can see all my aready added Social Websites in the section bellow.
-
-                </div>
-            <div class="mdl-card__actions mdl-card--border">
-                <a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">Send Message</a>
             </div>
-
-            </div>
-
-
-            <div class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid">
-                <div class="mdl-cell mdl-cell--12-col card-lesson mdl-card">
-                    <h4>Make Post</h4>
-                    <form action="#">
-                        <div class="mdl-textfield mdl-js-textfield" style="width:unset; display: block">
-                            <input class="mdl-textfield__input" type="text" id="sample1" style="font-size: 22px">
-                            <label class="mdl-textfield__label" for="sample1" style="font-size: 22px;">What's on your
-                                mind? <!--?php echo $_SESSION['username']; ?--> Stefan Peyreder</label>
-                        </div>
-                    </form>
-
-                    <div class="mdl-card__actions">
-                        <a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">Share your Post</a>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- Social Media already added content-->
-            <ul class="demo-list-control mdl-list" id="socialMediaAdded"></ul>
-
 
             <div class="mdl-cell mdl-cell--12-col">
                 <h3>Recent Posts</h3>
             </div>
 
+
+
             <div class="mdl-cell mdl-cell--4-col card-lesson mdl-card mdl-shadow--2dp">
-                <div class="mdl-card__title mdl-card--expand mdl-color--teal-300" style="background-position: center; background-image: url(images/p1.jpg)">
+                <div class="mdl-card__title mdl-card--expand mdl-color--teal-300"
+                     style="background-position: center; background-image: url(images/f1.jpg)">
                     <h2 class="mdl-card__title-text">Instagram</h2>
                 </div>
                 <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-                    I didn't choose the pug life, the pug life chose me.
-                    #bordeaux #france #roadtrip
+                    This sunset in Kos, Greek is probably the most beautiful shot i ever managed to take.
                 </div>
                 <div class="mdl-card__actions mdl-card--border">
                     <a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">GO TO PAGE</a>
                 </div>
             </div>
             <div class="mdl-cell mdl-cell--4-col card-lesson mdl-card mdl-shadow--2dp">
-                <div class="mdl-card__title mdl-card--expand mdl-color--teal-300" style="background-position: center; background-image: url(images/p2.jpg)">
+                <div class="mdl-card__title mdl-card--expand mdl-color--teal-300"
+                     style="background-position: center; background-image: url(images/f2.jpg)">
                     <h2 class="mdl-card__title-text">Twitter</h2>
                 </div>
                 <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-                    #cuba #slackline #travel #beach.
+                    What a match!
+
+                    #football #soccer #matchday #austria #georgia #wearefootball #eleven #kick #pass
                 </div>
                 <div class="mdl-card__actions mdl-card--border">
                     <a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">GO TO PAGE</a>
                 </div>
             </div>
             <div class="mdl-cell mdl-cell--4-col card-lesson mdl-card mdl-shadow--2dp">
-                <div class="mdl-card__title mdl-card--expand mdl-color--teal-300" style="background-position: center; background-image: url(images/p3.jpg)">
+                <div class="mdl-card__title mdl-card--expand mdl-color--teal-300"
+                     style="background-position: center; background-image: url(images/f3.jpg)">
                     <h2 class="mdl-card__title-text">Facebook</h2>
                 </div>
                 <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-                    #bruges #belgium lovely town
+                    Wunderbarer Abend mit einer tollen Schiffsfahrt auf der MS Stadt Linz und geilem Essen gekrönt vom Donau in Flammen Feuerwerk mit Musik!
                 </div>
                 <div class="mdl-card__actions mdl-card--border">
                     <a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">GO TO PAGE</a>
@@ -225,12 +162,25 @@ require("database.php");
             </div>
 
             <div class="mdl-cell mdl-cell--4-col card-lesson mdl-card mdl-shadow--2dp">
-                <div class="mdl-card__title mdl-card--expand mdl-color--teal-300" style="background-position: center; background-image: url(images/p4.jpg)">
+                <div class="mdl-card__title mdl-card--expand mdl-color--teal-300"
+                     style="background-position: center; background-image: url(images/f4.jpg)">
                     <h2 class="mdl-card__title-text">Facebook</h2>
                 </div>
                 <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-                    Vielleicht wird alles vielleichter. Tanz mal drüber nach.
-                    #santamonica #california #santamonicapier
+                    Today was a chill summer day hanging out with @vicky_langeder @viktorh_ and @_pezii_ ending at the main place in #perg
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                    <a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">GO TO PAGE</a>
+                </div>
+            </div>
+
+            <div class="mdl-cell mdl-cell--8-col card-lesson mdl-card mdl-shadow--2dp">
+                <div class="mdl-card__title mdl-card--expand mdl-color--teal-300"
+                     style="background-position: center; background-image: url(images/f6.jpg)">
+                    <h2 class="mdl-card__title-text">Facebook</h2>
+                </div>
+                <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+                    Awesome day in the nature. Love it.
                 </div>
                 <div class="mdl-card__actions mdl-card--border">
                     <a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">GO TO PAGE</a>
@@ -238,19 +188,26 @@ require("database.php");
             </div>
 
             <div class="mdl-cell mdl-cell--4-col card-lesson mdl-card mdl-shadow--2dp">
-                <div class="mdl-card__title mdl-card--expand mdl-color--teal-300" style="background-position: center; background-image: url(images/p7.jpg)">
+                <div class="mdl-card__title mdl-card--expand mdl-color--teal-300"
+                     style="background-position: center; background-image: url(images/f5.jpg)">
                     <h2 class="mdl-card__title-text">Google+</h2>
                 </div>
                 <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-                    What a lovely place
-                    #santamonica #california #santamonicapier
+                    Today Lightroom had to fix what the weather couldn't do for the camera 😀😊 #sunday #landscape
                 </div>
                 <div class="mdl-card__actions mdl-card--border">
                     <a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">GO TO PAGE</a>
                 </div>
             </div>
 
-        </div>
+            <div class="mdl-cell mdl-cell--12-col">
+                <h3>Added whooples</h3>
+            </div>
+
+            <!-- Social Media already added content-->
+            <ul class="demo-list-control mdl-list" id="socialMediaAdded"></ul>
+
+
     </main>
 </div>
 </body>

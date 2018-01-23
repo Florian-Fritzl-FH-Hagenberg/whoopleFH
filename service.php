@@ -42,13 +42,16 @@ function login($username, $password)
     //TODO CONNECTION aus database.php holen
     $connection = mysqli_connect("localhost", "root", "", "whoople");
     //Checking is user existing in the database or not
-    $query = "SELECT * FROM wUser, wAuthentication WHERE wUser.wAuthentication_ID = wAuthentication.wAuthentication_ID AND wUser_Username = '$username' AND wAuthentication_PW = '$password';";
+    $query = "SELECT wUser.wUser_Forename, wUser.wUser_Lastname, wUser.wUser_Description FROM wUser, wAuthentication WHERE wUser.wAuthentication_ID = wAuthentication.wAuthentication_ID AND wUser_Username = '$username' AND wAuthentication_PW = '$password';";
     $result = mysqli_query($connection, $query);
     $rows = mysqli_num_rows($result);
-
+    $row = mysqli_fetch_row($result);
     $response = array();
     if ($rows === 1) {
         $_SESSION['username'] = $username;
+        $_SESSION['forename'] = $row[0];
+        $_SESSION['lastname'] = $row[1];
+        $_SESSION['description'] = $row[2];
         $response['status'] = 'success';
     } else {
         $response['status'] = 'error';
